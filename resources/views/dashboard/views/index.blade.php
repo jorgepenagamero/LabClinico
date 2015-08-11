@@ -38,7 +38,7 @@
             </div>
         </a>
 
-        <a href="{{ route('crearPaciente', array('Orina')) }}" class="col-lg-4 col-xs-6">
+        <a href="{{ route('crearPaciente', array('orina')) }}" class="col-lg-4 col-xs-6">
         {{-- <a href="{{ route('orinaCrear') }}" class="col-lg-4 col-xs-6"> --}}
             <div class="small-box bg-aqua">
                 <div class="inner">
@@ -65,7 +65,7 @@
             </div>
         </a>
 
-        <a href="{{ route('crearPaciente', array('Hemograma')) }}" class="col-lg-4 col-xs-6">
+        <a href="{{ route('crearPaciente', array('hemograma')) }}" class="col-lg-4 col-xs-6">
             <div class="small-box bg-blue">
                 <div class="inner">
                   <h3>Hemograma</h3>
@@ -78,7 +78,7 @@
             </div>
         </a>
 
-        <a href="{{ route('hecesCrear') }}" class="col-lg-4 col-xs-6">
+        <a href="{{ route('crearPaciente', array('heces')) }}" class="col-lg-4 col-xs-6">
             <div class="small-box bg-red">
                 <div class="inner">
                   <h3>Heces</h3>

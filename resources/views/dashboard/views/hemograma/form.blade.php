@@ -6,7 +6,7 @@
     <input type="hidden" name="tipo_analisis" value="Hemograma">
 
     <div class="box-body">
-         <div class="col-md-12 ">
+        <div class="col-md-12 ">
             <div class="form-group">
                 <label for="medico" class="col-md-2 control-label">Medico</label>
                 <div class="col-md-9">
@@ -14,18 +14,18 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 ">
+        <div class="col-md-6 ">
             @include('dashboard.views.hemograma.panel_a')
         </div>
 
-        <div class="col-sm-6 ">
+        <div class="col-md-6 ">
             @include('dashboard.views.hemograma.panel_b')
         </div>
         
-        <div class="col-sm-12 ">
+        <div class="col-md-12 ">
             <div class="form-group">
-                <label for="observaciones" class="col-sm-2 control-label">Observaciones</label>
-                <div class="col-sm-9">
+                <label for="observaciones" class="col-md-2 control-label">Observaciones</label>
+                <div class="col-md-9">
                     <input type="text" name="observaciones" value="{{$hemograma->observaciones}}"class="form-control" placeholder=" ">
                 </div>
             </div>
@@ -35,7 +35,7 @@
         <a href="{{ route('pacienteAnalisis', array($pacienteAnalisis->paciente_id)) }}" class="btn btn-default">Cancelar</a>
         <button type="submit" class="btn btn-primary pull-right" style="margin-left:20px;">Guardar</button>
         @if($hemograma->imprimir)
-        <a href="{{ route('analisisImprimir', array('Hemograma', $hemograma->id)) }}" target="_black" class="btn btn-info pull-right"><i class="fa fa-print"></i></a>
+        <a href="{{ route('analisisImprimir', array('hemograma', $hemograma->id)) }}" target="_black" class="btn btn-info pull-right"><i class="fa fa-print"></i></a>
         @endif
     </div>
 </form>

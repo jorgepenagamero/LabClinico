@@ -32,37 +32,61 @@ class ExpedientesController extends Controller {
 	}
 	
 	public function guardar(Request $request){
-		if ($request->id == "") {
-			$paciente = new Paciente;
-			$ruta = strtolower($request->analisis)."/Crear/";
-			// return $ruta;
-		}else{
-			$pacienteAnalisis = PacienteAnalisis::find($request->id);
-			$paciente = Paciente::find($request->id);
-			$ruta = strtolower($pacienteAnalisis->analisis)."/editar/".$request->id;
-			// return $ruta;
-		}
-
+		
+		// return ($request->id ." ". $request->analisis_id);
 		$this->validate($request, ['nombre' => 'required|max:150', 'edad' => 'required|numeric']);
+		
+		// Paciente nuevo
+		if (($request->id == "") && ($request->analisis_id == "")){
+			$paciente = new Paciente;
+		}
+		// Editar paciente
+		if (($request->analisis_id == "") && ($request->id != "")){
+			$paciente = Paciente::find($request->id);
+		}
+		// Editar paciente desde Analisis
+		else {
+			$pacienteAnalisis = PacienteAnalisis::find($request->analisis_id);
+			$paciente = Paciente::find($pacienteAnalisis->paciente_id);
+		}
 
 		$paciente->nombre 	= $request->nombre;
 		$paciente->edad 	= $request->edad;
 		$paciente->detalle_edad = $request->detalle_edad;
 		$paciente->save();
 
-                 
-        // return redirect()->route($ruta);
+		// Paciente nuevo
+		if (($request->id == "") && ($request->analisis_id == "")){
+			$ruta = strtolower($request->analisis)."/crear/".$paciente->id;
+		}
+		// Editar paciente
+		elseif (($request->analisis_id == "") && ($request->id != "")){
+			$ruta = 'expedientes';
+		}
+		// Editar paciente desde Analisis
+		else{
+			$ruta = strtolower($pacienteAnalisis->analisis)."/editar/".$request->analisis_id;
+		}
 
         return Redirect($ruta);
 
 	}
 
-	public function editar($id){
+	public function editar($tipo, $id){
 
-		$pacienteAnalisis = PacienteAnalisis::find($id);
+		// Cuando se llaman de expedientes
+		if ($tipo == "Expediente") {
+			$paciente = Paciente::find($id);
+			$pacienteAnalisis = new PacienteAnalisis;
+			$analisis = $tipo;
+		}
+		// Cuando se llama de un analisis
+		else{
+			$pacienteAnalisis = PacienteAnalisis::find($id);
+			$paciente = Paciente::find($pacienteAnalisis->paciente_id);
+			$analisis = $pacienteAnalisis->analisis;
+		}
 
-		$paciente = Paciente::find($pacienteAnalisis->paciente_id);
-		$analisis = $pacienteAnalisis->analisis;
 		$paciente->accion = "Editar";
 
 		return view('dashboard.views.expedientes.crear', compact('paciente', 'pacienteAnalisis', 'analisis'));

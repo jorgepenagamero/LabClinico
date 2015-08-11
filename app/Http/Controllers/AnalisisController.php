@@ -8,6 +8,7 @@ use App\PacienteAnalisis;
 use App\Paciente;
 use App\Orina;
 use App\Hemograma;
+use App\Heces;
 
 class AnalisisController extends Controller {
 
@@ -25,15 +26,19 @@ class AnalisisController extends Controller {
     	$paciente->medico = $pacienteAnalisis->medico;
 
         switch ($analisis) {
-            case 'Orina':
+            case 'orina':
                 $data = Orina::find($id);
                 break;
             
-            case 'Hemograma':
+            case 'hemograma':
                 $data = Hemograma::find($id);
                 break;
+
+            case 'heces':
+                $data = Heces::find($id);
+                break;
         }
- 		$pdf = \PDF::loadView('pdf.' . strtolower($analisis), compact('data', 'paciente'))->setPaper([0,0,612,396]);
+ 		$pdf = \PDF::loadView('pdf.' . $analisis, compact('analisis', 'data', 'paciente'))->setPaper([0,0,612,396]);
  		return $pdf->stream();
 
     }

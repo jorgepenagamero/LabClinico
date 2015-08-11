@@ -59,7 +59,7 @@
                             <a href="{{ route('pacienteAnalisis', array($paciente->id)) }}" class="btn btn-default" title="Historial">
                                 <i class="fa fa-history"></i>
                             </a>
-                            {{-- <a href="{{ route('editarPaciente', array($paciente->id)) }}" class="btn btn-default" title="Editar"><i class="fa fa-pencil"></i></a> --}}
+                            <a href="{{ route('editarPaciente', array('Expediente',$paciente->id)) }}" class="btn btn-default" title="Editar"><i class="fa fa-pencil"></i></a>
                         </div>
                         </td>
                     </tr>

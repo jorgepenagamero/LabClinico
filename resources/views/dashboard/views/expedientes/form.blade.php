@@ -1,7 +1,8 @@
  <form class="form-horizontal" method="POST" action="{{route('crearPaciente')}}">
     {{-- <input type="hidden" name="_method" value="PUT"> --}}
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-    <input type="hidden" name="id" value="{{ $pacienteAnalisis->id }}">
+    <input type="hidden" name="id" value="{{ $paciente->id }}">
+    <input type="hidden" name="analisis_id" value="{{ $pacienteAnalisis->id }}">
     <input type="hidden" name="analisis" value="{{ $analisis }}">
     <div class="box-body">
         <br>

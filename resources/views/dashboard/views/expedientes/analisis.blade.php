@@ -12,7 +12,8 @@
     </h1>
     <ol class="breadcrumb">
       <li><a href="/"><i class="fa fa-dashboard"></i> Inicio</a></li>
-      <li class="active">Expedientes</li>
+      <li><a href="{{ route('expedientes') }}"><i class="fa fa-list"></i> Expedientes</a></li>
+      <li class="active">Analisis</li>
     </ol>
     </section>
 

@@ -26,7 +26,7 @@
     <div class="box box-info">
         <h3 class="text-center col-xs-12">
             @if($hemograma->accion == "Editar")
-            <a href="{{ route('editarPaciente', array($pacienteAnalisis->id)) }}" class="btn btn-default pull-left"><i class="fa fa-arrow-left"></i></a>
+            <a href="{{ route('editarPaciente', array('hemograma',$pacienteAnalisis->id)) }}" class="btn btn-default pull-left"><i class="fa fa-arrow-left"></i></a>
             @endif
             <strong>Paso 2:</strong> Examen Hemograma
         </h3>

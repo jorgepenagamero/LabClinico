@@ -26,21 +26,21 @@ Route::get('/', ['as' => 'dashboard', 'uses' => 'DashboardController@index']);
 // Orina
 	require(__DIR__ . '/Routes/orina.php');
 
-
-Route::get('/diversos/crear', ['as' => 'diversosCrear', 'uses' => 'DiversosController@index']);
-Route::get('/diversos/editar/{id}', ['as' => 'diversosEditar', 'uses' => 'DiversosController@editar']);
-
 // Hemograma
 	require(__DIR__ . '/Routes/hemograma.php');
 
+// Heces
+	require(__DIR__ . '/Routes/heces.php');
 
-Route::get('/heces/crear', ['as' => 'hecesCrear', 'uses' => 'HecesController@crear']);
-Route::get('/heces/editar/{id}', ['as' => 'hecesEditar', 'uses' => 'HecesController@Editar']);
+Route::get('/diversos/crear', ['as' => 'diversosCrear', 'uses' => 'DiversosController@index']);
+Route::get('/diversos/editar/{id}', ['as' => 'diversosEditar', 'uses' => 'DiversosController@editar']);
 
 
 Route::get('/quimica/crear', ['as' => 'quimicaCrear', 'uses' => 'QuimicaController@crear']);
 Route::get('/quimica/editar/{id}', ['as' => 'quimicaEditar', 'uses' => 'QuimicaController@editar']);
 
+// Imprimir
+Route::get('/analisis/imprimir/{analisis}/{id}', ['as' => 'analisisImprimir', 'uses' => 'AnalisisController@analisis']);
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

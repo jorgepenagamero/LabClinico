@@ -7,6 +7,3 @@ Route::post('/hemograma/crear', ['as' => 'hemogramaCrear', 'uses' => 'HemogramaC
 // Editar
 Route::get('/hemograma/editar/{id}', ['as' => 'hemogramaEditar', 'uses' => 'HemogramaController@Editar']);
 Route::post('/hemograma/editar/{id}', ['as' => 'hemogramaEditar', 'uses' => 'HemogramaController@guardar']);
-
-
-Route::get('/analisis/imprimir/{analisis}/{id}', ['as' => 'analisisImprimir', 'uses' => 'AnalisisController@analisis']);
