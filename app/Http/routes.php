@@ -42,6 +42,12 @@ Route::get('/quimica/editar/{id}', ['as' => 'quimicaEditar', 'uses' => 'QuimicaC
 // Imprimir
 Route::get('/analisis/imprimir/{analisis}/{id}', ['as' => 'analisisImprimir', 'uses' => 'AnalisisController@analisis']);
 
+// Otros
+Route::get('/perfil', ['as' => 'perfil', 'uses' => 'ApiController@perfil']);
+Route::post('/perfil', ['as' => 'perfil', 'uses' => 'ApiController@guardar']);
+
+Route::get('/informacion', ['as' => 'info', 'uses' => 'ApiController@info']);
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',

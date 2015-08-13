@@ -25,21 +25,7 @@
       
     <div class="row">
 
-        <a href="{{ route('expedientes') }}" class="col-lg-4 col-xs-6">
-            <div class="small-box bg-olive">
-                <div class="inner">
-                  <h3>Expedientes</h3>
-                  <p>Examen</p>
-                </div>
-                <div class="icon">
-                  <i class="fa fa-list"></i>
-                </div>
-                <p href="#" class="small-box-footer">Ir <i class="fa fa-arrow-circle-right"></i></p>
-            </div>
-        </a>
-
-        <a href="{{ route('crearPaciente', array('orina')) }}" class="col-lg-4 col-xs-6">
-        {{-- <a href="{{ route('orinaCrear') }}" class="col-lg-4 col-xs-6"> --}}
+        <a href="{{ route('crearPaciente', array('orina')) }}" class="col-md-2 col-md-offset-1 col-sm-6">
             <div class="small-box bg-aqua">
                 <div class="inner">
                   <h3>Orina</h3>
@@ -52,7 +38,7 @@
             </div>
         </a>
 
-        <a href="{{ route('diversosCrear') }}" class="col-lg-4 col-xs-6">
+        <a href="{{ route('crearPaciente', array('diversos')) }}" class="col-md-2 col-sm-6">
             <div class="small-box bg-green">
                 <div class="inner">
                   <h3>Diversos</h3>
@@ -65,7 +51,7 @@
             </div>
         </a>
 
-        <a href="{{ route('crearPaciente', array('hemograma')) }}" class="col-lg-4 col-xs-6">
+        <a href="{{ route('crearPaciente', array('hemograma')) }}" class="col-md-2 col-sm-6">
             <div class="small-box bg-blue">
                 <div class="inner">
                   <h3>Hemograma</h3>
@@ -78,7 +64,7 @@
             </div>
         </a>
 
-        <a href="{{ route('crearPaciente', array('heces')) }}" class="col-lg-4 col-xs-6">
+        <a href="{{ route('crearPaciente', array('heces')) }}" class="col-md-2 col-sm-6">
             <div class="small-box bg-red">
                 <div class="inner">
                   <h3>Heces</h3>
@@ -91,7 +77,7 @@
             </div>
         </a>
 
-        <a href="{{ route('quimicaCrear') }}" class="col-lg-4 col-xs-6">
+        <a href="{{ route('crearPaciente', array('quimica')) }}" class="col-md-2 col-md-6">
             <div class="small-box bg-yellow">
                 <div class="inner">
                   <h3>Quimica</h3>

@@ -13,13 +13,17 @@
                     <input type="text" name="medico" class="form-control" value="{{$hemograma->medico}}"required autofocus>
                 </div>
             </div>
+            <br />
         </div>
-        <div class="col-md-6 ">
+        <div class="col-md-4 ">
             @include('dashboard.views.hemograma.panel_a')
         </div>
 
-        <div class="col-md-6 ">
+        <div class="col-md-4 ">
             @include('dashboard.views.hemograma.panel_b')
+        </div>
+        <div class="col-md-4 ">
+            @include('dashboard.views.hemograma.panel_c')
         </div>
         
         <div class="col-md-12 ">

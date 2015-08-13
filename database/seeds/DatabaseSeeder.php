@@ -21,7 +21,8 @@ class DatabaseSeeder extends Seeder {
 		// $this->call('PacientesTableSeeder');
 		// $this->call('PacienteAnalisisTableSeeder');
 		// $this->call('HemogramaTableSeeder');
-		$this->call('OrinaTableSeeder');
+		// $this->call('OrinaTableSeeder');
+		$this->call('HecesTableSeeder');
 	}
 
 }

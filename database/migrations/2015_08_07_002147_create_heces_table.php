@@ -16,19 +16,19 @@ class CreateHecesTable extends Migration {
 		{
 			$table->increments('id');
 
-			$table->enum('color',array('Blanco','Negro','Rojo'));
-			$table->enum('consistencia',array('Blanco','Negro','Rojo'));
-			$table->enum('sangre',array('+','++','+++'));
-			$table->enum('restos',array('Blanco','Negro','Rojo'));
-			$table->enum('entrocitos',array('Blanco','Negro','Rojo'));
-			$table->enum('levadura',array('Blanco','Negro','Rojo'));
-			$table->enum('mucus',array('+','++','+++'));
-			$table->enum('leucositos',array('Blanco','Negro','Rojo'));
-			$table->enum('flora',array('Blanco','Negro','Rojo'));
-			$table->enum('protozoarios',array('Blanco','Negro','Rojo'));
-			$table->enum('quistes',array('Blanco','Negro','Rojo'));
-			$table->enum('larvas',array('Blanco','Negro','Rojo'));
-			$table->enum('metazueros',array('Blanco','Negro','Rojo'));
+			$table->string('color', 100);
+			$table->string('consistencia', 100);
+			$table->string('sangre', 100);
+			$table->string('restos', 100);
+			$table->string('entrocitos', 100);
+			$table->string('levadura', 100);
+			$table->string('mucus', 100);
+			$table->string('leucositos', 100);
+			$table->string('flora', 100);
+			$table->string('protozoarios', 100);
+			$table->string('quistes', 100);
+			$table->string('larvas', 100);
+			$table->string('metazueros', 100);
 
 			$table->text('observaciones');
 

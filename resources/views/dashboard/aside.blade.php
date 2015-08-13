@@ -1,7 +1,5 @@
 <aside class="main-sidebar">
-
   <section class="sidebar">
-
     <!-- Sidebar User -->
     <div class="user-panel">
       <div class="pull-left image">
@@ -12,7 +10,6 @@
         <a href="#"><i class="fa fa-circle text-success"></i> Trabajando</a>
       </div>
     </div>
-
     <!-- Buscador -->
     <form action="#" method="get" class="sidebar-form">
       <div class="input-group">
@@ -22,26 +19,38 @@
         </span>
       </div>
     </form>
-
     <!-- Sidebar Menu -->
     <ul class="sidebar-menu">
-        <li class="header">Opciones</li>
-        <li>
-            <a href="{{ route('examenes') }}">
-                <i class="fa fa-files-o"></i>
-                <span>Examenes</span>
-                {{-- <span class="label label-primary pull-right">12</span> --}}
-            </a>
+        <li class="header">Análisis</li>
+        <li><a href="{{ route('crearPaciente', array('orina')) }}"><i class="fa fa-files-o"></i>
+          <span>Orina</span></a>
         </li>
-
-      {{-- <li class="header">Otros</li>
-      <li class="treeview">
-        <a href="#"><span>Sistemas</span> <i class="fa fa-angle-left pull-right"></i></a>
-        <ul class="treeview-menu">
-          <li><a href="#">Link in level 2</a></li>
-          <li><a href="#">Link in level 2</a></li>
-        </ul>
-      </li> --}}
+        <li><a href="{{ route('crearPaciente', array('diversos')) }}"><i class="fa fa-files-o"></i>
+          <span>Diversos</span></a>
+        </li>
+        <li><a href="{{ route('crearPaciente', array('hemograma')) }}"><i class="fa fa-files-o"></i>
+          <span>Hemograma</span></a>
+        </li>
+        <li><a href="{{ route('crearPaciente', array('heces')) }}"><i class="fa fa-files-o"></i>
+          <span>Heces</span></a>
+        </li>
+        <li><a href="{{ route('crearPaciente', array('quimica')) }}"><i class="fa fa-files-o"></i>
+          <span>Quimica</span></a>
+        </li>
+        <li class="header">Otros</li>
+            <li><a href="{{ route('examenes') }}"><i class="fa fa-list"></i>
+              <span>Examenes</span></a>
+            </li>
+            <li><a href="{{ route('expedientes') }}"><i class="fa fa-list"></i>
+              <span>Expedientes</span></a>
+            </i>
+            </li>
+            <li><a href="{{ route('perfil') }}"><i class="fa fa-user-md"></i>
+              <span>Perfil</span></a>
+            </li>
+            <li><a href="{{ route('info') }}"><i class="fa fa-info"></i>
+              <span>Información</span></a>
+            </li>
     </ul>
 
   </section>

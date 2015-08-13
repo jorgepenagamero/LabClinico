@@ -1,49 +1,36 @@
-
-    <div class="form-group">
-        <label for="color" class="col-md-3 control-label">Color</label>
-        <div class="col-md-8">
-            <select class="form-control select2" name="color">
-                <option selected="selected">Alabama</option> <option>Alaska</option> <option>California</option>
-            </select>
-        </div>
+<div class="form-group">
+    <label for="color" class="col-md-3 control-label">Color</label>
+    <div class="col-md-8">
+        <input name="color" value="{{$orina->color}}" class="form-control" list="color" />
     </div>
-    <div class="form-group">
-        <label for="aspecto" class="col-md-3 control-label">Aspecto</label>
-        <div class="col-md-8">
-            <select class="form-control select2" name="aspecto">
-                <option selected="selected">Alabama</option> <option>Alaska</option> <option>California</option>
-            </select>
-        </div>
+</div>
+<div class="form-group">
+    <label for="aspecto" class="col-md-3 control-label">Aspecto</label>
+    <div class="col-md-8">
+        <input name="aspecto" value="{{$orina->aspecto}}" class="form-control" list="aspecto" />
     </div>
-    <div class="form-group">
-        <label for="dencidad" class="col-md-3 control-label">Dencidad</label>
-        <div class="col-md-8">
-            <select class="form-control select2" name="dencidad">
-                <option selected="selected">Alabama</option> <option>Alaska</option> <option>California</option>
-            </select>
-        </div>
+</div>
+<div class="form-group">
+    <label for="dencidad" class="col-md-3 control-label">Dencidad</label>
+    <div class="col-md-8">
+        <input name="dencidad" value="{{$orina->dencidad}}" class="form-control" list="dencidad" />
     </div>
-    <div class="form-group">
-        <label for="esterasa" class="col-md-3 control-label">Esterasa</label>
-        <div class="col-md-8">
-            <select class="form-control select2" name="esterasa">
-                <option selected="selected">Alabama</option> <option>Alaska</option> <option>California</option>
-            </select>
-        </div>
+</div>
+<div class="form-group">
+    <label for="esterasa" class="col-md-3 control-label">Esterasa</label>
+    <div class="col-md-8">
+        <input name="esterasa" value="{{$orina->esterasa}}" class="form-control" list="esterasa" />
     </div>
-    <div class="form-group">
-        <label for="nitritos" class="col-md-3 control-label">Nitritos</label>
-        <div class="col-md-8">
-            <select class="form-control select2" name="nitritos">
-                <option selected="selected">Alabama</option> <option>Alaska</option> <option>California</option>
-            </select>
-        </div>
+</div>
+<div class="form-group">
+    <label for="nitritos" class="col-md-3 control-label">Nitritos</label>
+    <div class="col-md-8">
+        <input name="nitritos" value="{{$orina->nitritos}}" class="form-control" list="nitritos" />
     </div>
-    <div class="form-group">
-        <label for="reaccion" class="col-md-3 control-label">Reacción</label>
-        <div class="col-md-8">
-            <select class="form-control select2" name="reaccion">
-                <option selected="selected">Alabama</option> <option>Alaska</option> <option>California</option>
-            </select>
-        </div>
+</div>
+<div class="form-group">
+    <label for="reaccion" class="col-md-3 control-label">Reacción</label>
+    <div class="col-md-8">
+        <input name="reaccion" value="{{$orina->reaccion}}" class="form-control" list="reaccion" />
     </div>
+</div>

@@ -14,6 +14,7 @@
                 </div>
             </div>
         </div>
+        @include('dashboard.views.orina.datos')
         <div class="col-md-4 ">
             @include('dashboard.views.orina.panel_a')
         </div>

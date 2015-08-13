@@ -16,25 +16,25 @@ class CreateOrinasTable extends Migration {
 		{
 			$table->increments('id');
 
-			$table->enum('color',array('Blanco','Negro','Rojo'));
-			$table->enum('aspecto',array('Blanco','Negro','Rojo'));
-			$table->enum('dencidad',array('Blanco','Negro','Rojo'));
-			$table->enum('esterasa',array('Blanco','Negro','Rojo'));
-			$table->enum('nitritos',array('Blanco','Negro','Rojo'));
-			$table->enum('reaccion',array('Blanco','Negro','Rojo'));
-			$table->enum('proteinas',array('Blanco','Negro','Rojo'));
-			$table->enum('glucosa',array('Blanco','Negro','Rojo'));
-			$table->enum('cetonicos',array('Blanco','Negro','Rojo'));
+			$table->string('color',100);
+			$table->string('aspecto',100);
+			$table->string('dencidad',100);
+			$table->string('esterasa',100);
+			$table->string('nitritos',100);
+			$table->string('reaccion',100);
+			$table->string('proteinas',100);
+			$table->string('glucosa',100);
+			$table->string('cetonicos',100);
 
-			$table->enum('urobitmogeno',array('Blanco','Negro','Rojo'));
-			$table->enum('bilirubina',array('Blanco','Negro','Rojo'));
-			$table->enum('sangre',array('Blanco','Negro','Rojo'));
-			$table->enum('bacterias',array('Blanco','Negro','Rojo'));
-			$table->string('leucocitos',150);
-			$table->string('hematies',150);
-			$table->string('cilindros',150);
-			$table->string('cristales',150);
-			$table->enum('celulas',array('Blanco','Negro','Rojo'));
+			$table->string('urobitmogeno',100);
+			$table->string('bilirubina',100);
+			$table->string('sangre',100);
+			$table->string('bacterias',100);
+			$table->string('leucocitos',100);
+			$table->string('hematies',100);
+			$table->string('cilindros',100);
+			$table->string('cristales',100);
+			$table->string('celulas',100);
 			
 			$table->text('otros');
 

@@ -34,6 +34,8 @@ class HecesController extends Controller {
 
 	public function guardar(Request $request){
 
+		// return $request;
+		
 		if ($request->id == "") {
 			$heces = new Heces;
 			$pacienteAnalisis = new PacienteAnalisis;

@@ -13,6 +13,7 @@
                 </div>
             </div>
         </div>
+        @include('dashboard.views.heces.datos')
         <div class="col-md-6 ">
             @include('dashboard.views.heces.panel_a')
         </div>

@@ -1,6 +1,6 @@
 <header class="main-header">
 
-  <a href="/" class="logo">Sistema Clínico</a>
+  <a href="/" class="logo"><i class="fa fa-home"></i> Sistema Clínico</a>
 
   <nav class="navbar navbar-static-top" role="navigation">
 
@@ -9,6 +9,7 @@
     </a>
     <div class="navbar-custom-menu">
       <ul class="nav navbar-nav">
+        {{-- <i>{{ Carbon/carbon->now()}}</i> --}}
 
         {{-- @include('dashboard.header.mensajes') --}}
 
