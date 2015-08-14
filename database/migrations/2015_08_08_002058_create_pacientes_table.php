@@ -18,7 +18,7 @@ class CreatePacientesTable extends Migration {
 
 			$table->string('nombre', 150);
 			$table->integer('edad');
-			$table->enum('detalle_edad', array('Años', 'Meses'));
+			$table->string('detalle_edad',25);
 
 			$table->softDeletes();
 			$table->timestamps();

@@ -55,7 +55,7 @@
 
     </div>
     .<div class="box-footer">
-      <a href="/" class="btn btn-default">Cancelar</a>
+        <a href="{{ route('pacienteAnalisis', array($paciente->id)) }}" class="btn btn-default">Cancelar</a>
       <button type="submit" class="btn btn-info pull-right">Guardar</button>
     </div>
 </form>

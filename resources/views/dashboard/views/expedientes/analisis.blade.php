@@ -30,6 +30,27 @@
         </div>
 
         <div class="box-body table-responsive">
+        @if(count($pacienteAnalisis)<1)
+        <div class="col-sm-4 col-sm-offset-4">
+            <h1 class="text-center">Crear analisis</h1>
+            <hr>
+            <a href="{{ '/orina/crear/' . $paciente->id }}">
+                <h2 class="box box-primary text-center">Orina</h2>
+            </a>
+            <a href="{{ '/diversos/crear/' . $paciente->id }}">
+                <h2 class="box box-primary text-center">Diversos</h2>
+            </a>
+            <a href="{{ '/hemograma/crear/' . $paciente->id }}">
+                <h2 class="box box-primary text-center">Hemograma</h2>
+            </a>
+            <a href="{{ '/heces/crear/' . $paciente->id }}">
+                <h2 class="box box-primary text-center">Heces</h2>
+            </a>
+            <a href="{{ '/quimica/crear/' . $paciente->id }}">
+                <h2 class="box box-primary text-center">Quimica</h2>
+            </a>
+        </div>
+        @else
             <table class="table table-bordered table-hover">
                 <thead>
                     <tr> 
@@ -79,6 +100,7 @@
                     </tr>
                 </tfoot>
             </table>
+        @endif
         </div>
 
     </div> 

@@ -27,27 +27,31 @@ class ExpedientesController extends Controller {
 		$paciente = new Paciente;
 		$pacienteAnalisis = new PacienteAnalisis;
 		$paciente->accion = "Crear";
+		$paciente->detalle_edad = "Años";
 
 		return view('dashboard.views.expedientes.crear', compact('paciente','pacienteAnalisis', 'analisis'));
 	}
 	
 	public function guardar(Request $request){
-		
-		// return ($request->id ." ". $request->analisis_id);
+		return $request->detalle_edad; 
+		// return ($request->id ." ". $request->analisis ." ". $request->analisis_id);
 		$this->validate($request, ['nombre' => 'required|max:150', 'edad' => 'required|numeric']);
 		
 		// Paciente nuevo
-		if (($request->id == "") && ($request->analisis_id == "")){
-			$paciente = new Paciente;
+		if ($request->analisis != "" && $request->analisis_id){
+			// return "Editar desde analisis";
+			$pacienteAnalisis = PacienteAnalisis::find($request->analisis_id);
+			$paciente = Paciente::find($pacienteAnalisis->paciente_id);
 		}
 		// Editar paciente
-		if (($request->analisis_id == "") && ($request->id != "")){
+		elseif (($request->analisis_id == "") && ($request->id != "")){
+			// return "Editar paciente";
 			$paciente = Paciente::find($request->id);
 		}
 		// Editar paciente desde Analisis
 		else {
-			$pacienteAnalisis = PacienteAnalisis::find($request->analisis_id);
-			$paciente = Paciente::find($pacienteAnalisis->paciente_id);
+			// return "nuevo";
+			$paciente = new Paciente;
 		}
 
 		$paciente->nombre 	= $request->nombre;

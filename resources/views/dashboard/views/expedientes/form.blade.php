@@ -18,10 +18,11 @@
                 <input type="number" name="edad" min="1" class="form-control" value="{{$paciente->edad}}" required>
             </div>
             <div class="col-sm-3">
-                <select class="form-control" name="detalle_edad">
-                    <option value="1" selected>Años</option>
-                    <option value="2">Meses</option>
-                </select>
+                <input name="consistencia" value="{{$paciente->detalle_edad}}" class="form-control" list="edades" />
+                <datalist id="edades">
+                    <option value="Años"/>
+                    <option value="Meses"/>
+                </datalist>
             </div>
         </div>
     </div>

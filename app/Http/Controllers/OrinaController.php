@@ -25,10 +25,11 @@ class OrinaController extends Controller {
 	public function crear($paciente_id){
 		$paciente = Paciente::find($paciente_id);
 		$orina = new Orina;
+		$pacienteAnalisis = new PacienteAnalisis;
 		$orina->accion = "Crear";
 		$orina->medico = "";
 
-		return view('dashboard.views.orina.crear', compact('orina', 'paciente'));
+		return view('dashboard.views.orina.crear', compact('orina', 'paciente', 'pacienteAnalisis'));
 	}
 	
 	public function guardar(Request $request){

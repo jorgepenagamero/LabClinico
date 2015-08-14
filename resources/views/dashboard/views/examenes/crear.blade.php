@@ -8,7 +8,7 @@
 
     <section class="content-header">
     <h1>
-      Creación
+      Examen
       <small>{{$examen->accion}}</small>
     </h1>
     <ol class="breadcrumb">
@@ -29,9 +29,7 @@
 	    </div>
 	@endif
     <div class="box box-info">
-
 		@include('dashboard.views.examenes.form')
-
     </div>
 
 </section>
@@ -40,25 +38,25 @@
 @section('js')
 <script>
   
-$(document).ready(function(){
-      var i=1;
-      $("#add_row").click(function(){
-      $('#addr'+i).html("<td><input name='valores["+i+"]' type='text' class='form-control input-md' required autofocus/>");
+var i = parseInt(document.getElementById('numvalores').value);
 
-      $('#tab_logic').append('<tr id="addr'+(i+1)+'"></tr>');
-      i++; 
-      });
+$("#add_row").click(function(){
+$('#addr'+i).html("<td><input name='valores["+i+"]' type='text' class='form-control input-md' required autofocus/><td class='text-center'> <a onClick='eliminar("+i+");' class='btn btn-danger' alt='Eliminar'><i class='fa fa-minus'></i></a> </td>");
 
-      $("#delete_row").click(function(){
-      
-            if(i>1){
-                $("#addr"+(i-1)).html('');
-                i--;
-            }
-      });
+$('#tab_logic').append('<tr id="addr'+(i+1)+'"></tr>');
+i++; 
+});
 
-});		
 
+function eliminar(id){
+if(i>1){
+    alert(i);
+    if (confirm("¿Seguro qué desea eliminar el valor?")) {
+        $("#addr"+(id)).remove();
+        i--;
+    };
+}
+}
 </script>
 
 @endsection

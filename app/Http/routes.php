@@ -30,14 +30,13 @@ Route::get('/', ['as' => 'dashboard', 'uses' => 'DashboardController@index']);
 	require(__DIR__ . '/Routes/hemograma.php');
 
 // Heces
-	require(__DIR__ . '/Routes/heces.php');
+    require(__DIR__ . '/Routes/heces.php');
+
+// Quimica
+    require(__DIR__ . '/Routes/quimica.php');
 
 Route::get('/diversos/crear', ['as' => 'diversosCrear', 'uses' => 'DiversosController@index']);
 Route::get('/diversos/editar/{id}', ['as' => 'diversosEditar', 'uses' => 'DiversosController@editar']);
-
-
-Route::get('/quimica/crear', ['as' => 'quimicaCrear', 'uses' => 'QuimicaController@crear']);
-Route::get('/quimica/editar/{id}', ['as' => 'quimicaEditar', 'uses' => 'QuimicaController@editar']);
 
 // Imprimir
 Route::get('/analisis/imprimir/{analisis}/{id}', ['as' => 'analisisImprimir', 'uses' => 'AnalisisController@analisis']);

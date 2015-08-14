@@ -30,7 +30,13 @@ class ExamenesController extends Controller {
 
 	public function guardar(Request $request)
 	{
-		$examen = new Examen;
+		// dd($request);
+		if ($request->id == "") {
+			$examen = new Examen;
+		}else{
+			$examen = Examen::find($request->id);
+			$this->elimarValores($examen->id);
+		}
 		
 		$this->validate($request, ['nombre' => 'required|max:100']);
     	$examen->nombre = $request->nombre;
@@ -52,7 +58,18 @@ class ExamenesController extends Controller {
 		$examen = Examen::find($id);
 		$examen->accion = "Editar";
 
-		return view('dashboard.views.examenes.crear', compact('examen'));
+		$valores = $examen->valores;
+
+		return view('dashboard.views.examenes.crear', compact('examen', 'valores'));
+	}
+
+	private function elimarValores($id){
+
+		$valores = ExamenValor::where('examen_id', $id)->get();
+
+		foreach ($valores as $valor) {
+			$valor->delete();
+		}
 	}
 
 }

@@ -16,7 +16,7 @@ class PacientesTableSeeder extends Seeder {
 
             $paciente->nombre       = $faker->name;
             $paciente->edad         = $faker->numberBetween(1,50);
-            $paciente->detalle_edad = $faker->numberBetween(1,2);
+            $paciente->detalle_edad = "Años";
             
             $paciente->save();
            	
