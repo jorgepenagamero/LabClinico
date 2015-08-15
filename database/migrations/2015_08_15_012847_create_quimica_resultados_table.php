@@ -17,7 +17,8 @@ class CreateQuimicaResultadosTable extends Migration {
 			$table->increments('id');
 
 			$table->string('resultado', 150);
-			$table->integer('valor_examen_id');
+			$table->string('examen', 150);
+			$table->string('valor', 150);
 			$table->integer('quimica_id');
 
 			$table->softDeletes();

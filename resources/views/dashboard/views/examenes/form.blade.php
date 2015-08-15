@@ -24,17 +24,19 @@
                 <input type="text" name='{{ 'valores['. $index .']'}}'  class="form-control" value="{{$valor->valor}}" required/> 
             </td>
             @if($index>0)
-            <td class="text-center">    
+            <td style="width:50px;" class="text-center">    
                 <a onClick="eliminar({{$index}});" class="btn btn-danger" alt="Eliminar"><i class="fa fa-minus"></i></a>
             </td>
+            @else
             @endif
           </tr>
-          <tr id='{{'addr' . count($valores)}}'></tr>
             <input type="hidden" id="numvalores" value="{{count($valores)}}">
         @endforeach
+          <tr id='{{'addr' . count($valores)}}'></tr>
         @else
             <tr id='addr0'>
-            <td> 
+            <td style="width:50px;"></td>
+            <td style="width:50px;"> 
                 <input type="text" name='valores[0]' class="form-control" required/> 
             </td>
             <input type="hidden" id="numvalores" value="1">
@@ -43,7 +45,9 @@
         @endif
         </tbody>
         <tfooter>
-          <tr><td><a id="add_row" class="btn btn-primary pull-right"><i class="fa fa-plus"></i></a></td></tr>
+          <tr>
+            <td></td>
+            <td><a id="add_row" class="btn btn-primary pull-right"><i class="fa fa-plus"></i></a></td></tr>
         </tfooter>
     </table>        
     <br><br>

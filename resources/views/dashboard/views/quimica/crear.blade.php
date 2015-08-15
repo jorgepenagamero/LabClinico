@@ -1,7 +1,7 @@
 @extends('dashboard.base')
 
 @section('titulo')
-  Dashboard
+    Quimica
 @endsection
 
 @section('bread')
@@ -43,24 +43,71 @@
 
 <script>
 
-  var i= parseInt(document.getElementById('resultados').value);
+var i= parseInt(document.getElementById('resultados').value);
 
-  $("#add_row").click(function(){
-  $('#addr'+i).html("<td>"+ (i+1) +"</td><td><input type='text' class='form-control input-md'  /> </td><td><input  name='resultados["+i+"]' type='text'  class='form-control input-md' required></td><td><input  name='valores["+i+"]' type='text'  class='form-control input-md' required><td class='text-center'> <a onClick='eliminar("+(i)+");' class='btn btn-danger' alt='Eliminar'><i class='fa fa-minus'></i></a></td>");
+$("#add_row").click(function(){
+$('#addr'+i).html("<td>"+ (i+1) +"</td><td><input type='text' class='form-control input-md'  /> </td><td><input  name='resultados["+i+"]' type='text'  class='form-control input-md' required></td><td><input  name='valores["+i+"]' type='text'  class='form-control input-md' required><td class='text-center'> <a onClick='eliminar("+(i)+");' class='btn btn-danger' alt='Eliminar'><i class='fa fa-minus'></i></a></td>");
 
-  $('#tab_logic').append('<tr id="addr'+(i+1)+'"></tr>');
+$('#tab_logic').append('<tr id="addr'+(i+1)+'"></tr>');
   i++; 
-  });
+});
 
 function eliminar(id){
-if(i>1){
-    // alert(i);
-    if (confirm("¿Seguro qué desea eliminar el valor?")) {
-        $("#addr"+(id)).remove();
-        i--;
-    };
+  if(i>1){
+      // alert(i);
+      if (confirm("¿Seguro qué desea eliminar el valor?")) {
+          $("#addr"+(id)).remove();
+          i--;
+      };
+  }
 }
-}
+
+angular.module('App', [])
+
+.controller('BuscadorCtrl', ['$scope', '$http', function ($scope, $http) {
+  $scope.examenes = [];
+  $scope.valores = [];
+
+  $scope.buscar = function(txt){
+    if(txt != ""){
+      $http.get('http://sistema/examen/buscar/' + txt)
+      .success(function(response) { 
+        $scope.examenes = response;
+      })
+      .error(function(response){
+        console.log(response);
+      });
+    }
+    else{
+      $scope.examenes = [];
+      $scope.valor = "";
+      $scope.valores = [];
+    }
+
+  };
+
+  $scope.select = function(examen){
+      $http.get('http://sistema/examen/buscar/valor/' + examen.id)
+      .success(function(response) {
+        if(response.lenght >0){
+          $scope.valores = response;
+          console.log(response);
+          $scope.valor = response[0].valor;
+        }
+        else{
+          $scope.valor = "Sin Valores";
+          $scope.txt = examen.nombre;
+          $scope.examenes = [];
+        }
+  
+      })
+      .error(function(response){
+        console.log(response);
+      });
+
+  }
+
+}]);
 
 
 </script> 

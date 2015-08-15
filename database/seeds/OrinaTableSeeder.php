@@ -14,24 +14,24 @@ class OrinaTableSeeder extends Seeder {
         {
             $orina = new Orina;
 
-            $orina->color = "Lorem ipsum dolor sit amet.";
-            $orina->aspecto = "Lorem ipsum dolor sit amet.";
-            $orina->dencidad = "Lorem ipsum dolor sit amet.";
-            $orina->esterasa = "Lorem ipsum dolor sit amet.";
-            $orina->nitritos = "Lorem ipsum dolor sit amet.";
-            $orina->reaccion = "Lorem ipsum dolor sit amet.";
-            $orina->proteinas = "Lorem ipsum dolor sit amet.";
-            $orina->glucosa = "Lorem ipsum dolor sit amet.";
-            $orina->cetonicos = "Lorem ipsum dolor sit amet.";
-            $orina->urobitmogeno = "Lorem ipsum dolor sit amet.";
-            $orina->bilirubina = "Lorem ipsum dolor sit amet.";
-            $orina->sangre = "Lorem ipsum dolor sit amet.";
-            $orina->bacterias = "Lorem ipsum dolor sit amet.";
-            $orina->leucocitos = "Lorem ipsum dolor sit amet.";
-            $orina->hematies = "Lorem ipsum dolor sit amet.";
-            $orina->cilindros = "Lorem ipsum dolor sit amet.";
-            $orina->cristales = "Lorem ipsum dolor sit amet.";
-            $orina->celulas = "Lorem ipsum dolor sit amet.";
+            $orina->color = "Lorem ipsum.";
+            $orina->aspecto = "Lorem ipsum.";
+            $orina->dencidad = "Lorem ipsum.";
+            $orina->esterasa = "Lorem ipsum.";
+            $orina->nitritos = "Lorem ipsum.";
+            $orina->reaccion = "Lorem ipsum.";
+            $orina->proteinas = "Lorem ipsum.";
+            $orina->glucosa = "Lorem ipsum.";
+            $orina->cetonicos = "Lorem ipsum.";
+            $orina->urobitmogeno = "Lorem ipsum.";
+            $orina->bilirubina = "Lorem ipsum.";
+            $orina->sangre = "Lorem ipsum.";
+            $orina->bacterias = "Lorem ipsum.";
+            $orina->leucocitos = "Lorem ipsum.";
+            $orina->hematies = "Lorem ipsum.";
+            $orina->cilindros = "Lorem ipsum.";
+            $orina->cristales = "Lorem ipsum.";
+            $orina->celulas = "Lorem ipsum.";
             $orina->otros = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, modi!";
             
             $orina->save();

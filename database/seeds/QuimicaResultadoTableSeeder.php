@@ -15,7 +15,8 @@ class QuimicaResultadoTableSeeder extends Seeder {
             $quimicaResultado = new QuimicaResultado;
 
             $quimicaResultado->resultado = "Lorem ipsum dolor sit.";
-            $quimicaResultado->valor_examen_id = $faker->numberBetween(1,30);
+            $quimicaResultado->examen = "Lorem ipsum.";
+            $quimicaResultado->valor = "Lorem ipsum.";
             $quimicaResultado->quimica_id = $faker->numberBetween(1,30);
             
             $quimicaResultado->save();

@@ -14,19 +14,19 @@ class HecesTableSeeder extends Seeder {
         {
             $heces = new Heces;
 
-            $heces->color = "Lorem ipsum dolor sit amet.";
-            $heces->consistencia = "Lorem ipsum dolor sit amet.";
-            $heces->sangre = "Lorem ipsum dolor sit amet.";
-            $heces->restos = "Lorem ipsum dolor sit amet.";
-            $heces->entrocitos = "Lorem ipsum dolor sit amet.";
-            $heces->levadura = "Lorem ipsum dolor sit amet.";
-            $heces->mucus = "Lorem ipsum dolor sit amet.";
-            $heces->leucositos = "Lorem ipsum dolor sit amet.";
-            $heces->flora = "Lorem ipsum dolor sit amet.";
-            $heces->protozoarios = "Lorem ipsum dolor sit amet.";
-            $heces->quistes = "Lorem ipsum dolor sit amet.";
-            $heces->larvas = "Lorem ipsum dolor sit amet.";
-            $heces->metazueros = "Lorem ipsum dolor sit amet.";
+            $heces->color = "Lorem ipsum.";
+            $heces->consistencia = "Lorem ipsum.";
+            $heces->sangre = "Lorem ipsum.";
+            $heces->restos = "Lorem ipsum.";
+            $heces->entrocitos = "Lorem ipsum.";
+            $heces->levadura = "Lorem ipsum.";
+            $heces->mucus = "Lorem ipsum.";
+            $heces->leucositos = "Lorem ipsum.";
+            $heces->flora = "Lorem ipsum.";
+            $heces->protozoarios = "Lorem ipsum.";
+            $heces->quistes = "Lorem ipsum.";
+            $heces->larvas = "Lorem ipsum.";
+            $heces->metazueros = "Lorem ipsum.";
 
             $heces->observaciones = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, modi!";
             

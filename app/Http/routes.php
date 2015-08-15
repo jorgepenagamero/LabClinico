@@ -47,6 +47,9 @@ Route::post('/perfil', ['as' => 'perfil', 'uses' => 'ApiController@guardar']);
 
 Route::get('/informacion', ['as' => 'info', 'uses' => 'ApiController@info']);
 
+Route::get('examen/buscar/{txt}', 'ApiController@buscarExamen');
+Route::get('examen/buscar/valor/{id}', 'ApiController@buscarExamenValor');
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',

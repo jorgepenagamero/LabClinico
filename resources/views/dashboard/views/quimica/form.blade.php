@@ -1,4 +1,4 @@
-<form class="form-horizontal" method="POST" action="{{route('quimicaCrear')}}">
+<form class="form-horizontal" method="POST" action="{{route('quimicaCrear')}}" ng-controller="BuscadorCtrl">
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
     <input type="hidden" name="id" value="{{ $quimica->id }}">
     <input type="hidden" name="paciente_id" value="{{ $paciente->id }}">
@@ -24,34 +24,47 @@
               </thead>
               <tbody>
               @if($quimica->accion == "Editar")
-                @foreach($quimica->resultados as $index => $resultado)
-                <tr id='{{ 'addr'.$index }}'>
-                  <td> 1 </td>
-                  <td> <input type="text" value="{{$resultado->evalor->examen->nombre}}" class="form-control"/> </td>
-                  <td> <input type="text" value="{{$resultado->resultado}}" name='{{ 'resultados[' . $index . ']' }}' class="form-control" required/> </td>
-                  <td> <input type="text" value="{{$resultado->evalor->valor}}" name='{{ 'valores[' . $index . ']' }}' class="form-control" required/> </td>
-                  <td class="text-center">    
-                      <a onClick="eliminar({{$index}});" class="btn btn-danger" alt="Eliminar"><i class="fa fa-minus"></i></a>
-                  </td>
-                </tr>
-                <input type="hidden" id="resultados" value="{{ count($quimica->resultados) }}">
-                <tr id='{{ 'addr'. count($quimica->resultados) }}'></tr>
-                @endforeach
+                    @foreach($quimica->resultados as $index => $resultado)
+                    <tr id='{{ 'addr'.$index }}'>
+                      <td> 1 </td>
+                      <td> <input type="text" value="{{$resultado->evalor->examen->nombre}}" name='{{ 'examen[' . $index . ']' }}' class="form-control"/> </td>
+                      <td> <input type="text" value="{{$resultado->resultado}}" name='{{ 'resultado[' . $index . ']' }}' class="form-control" required/> </td>
+                      <td> <input type="text" value="{{$resultado->evalor->valor}}" name='{{ 'valor[' . $index . ']' }}' class="form-control" required/> </td>
+                      <td class="text-center">    
+                          <a onClick="eliminar({{$index}});" class="btn btn-danger" alt="Eliminar"><i class="fa fa-minus"></i></a>
+                      </td>
+                    </tr>
+                    @endforeach
+                    <input type="hidden" id="resultados" value="{{ count($quimica->resultados) }}">
+                    <tr id='{{ 'addr'. count($quimica->resultados) }}'></tr>
                 @else
-                <tr id='addr0'>
-                  <td> 1 </td>
-                  <td> <input type="text" class="form-control"/> </td>
-                  <td> <input type="text" name="resultados[0]" class="form-control" required/> </td>
-                  <td> <input type="text" name="valores[0]" class="form-control" required/> </td>
-                  <td style="width:50px;"></td>
-                </tr>
-                <input type="hidden" id="resultados" value="1">
-                <tr id='addr1'></tr>
+                    <?php  $r = new \stdClass?>
+
+                    <tr id='addr0'>
+                      <td> 1 </td>
+                      <td> <input type="search" class="form-control" ng-model="txt" name="examen[0]" ng-change="buscar(txt);"/> 
+                            <div class="list-group" style="position:absolute;">
+                              <a href="" class="list-group-item" ng-repeat="examen in examenes" ng-click="select(examen)"> 
+                                @{{examen.nombre}}
+                              </a>
+                            </div>
+                      </td>
+                      <td> <input type="text" name="resultado[0]" class="form-control" required/> </td>
+                      <td> 
+                        <input type="search" name="valor[0]" ng-model="valor" list="valores" class="form-control" required/>
+                        <datalist id="valores">
+                          <option ng-repeat="valor in valores" value="@{{valor.valor}}"/>
+                        </datalist>
+                      </td>
+                      <td style="width:50px;"></td>
+                    </tr>
+                    <input type="hidden" id="resultados" value="1">
+                    <tr id='addr1'></tr>
                 @endif
                 </tbody>
                 <tfooter>
                   <tr>
-                    <td></td><td></td><td></td>
+                    <td></td><td></td><td></td><td></td>
                     <td><a id="add_row" class="btn btn-primary pull-right"><i class="fa fa-plus"></i></a></td>
                   </tr>
                 </tfooter>
@@ -63,3 +76,4 @@
           <button type="submit" class="btn btn-info pull-right">Guardar</button>
       </div>
 </form>
+

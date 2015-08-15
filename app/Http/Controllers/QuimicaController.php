@@ -35,12 +35,8 @@ class QuimicaController extends Controller {
     }
 
     public function guardar(Request $request){
-
-        $qr = new \stdClass;
-        $qr->r = $request->resultados;
-        $qr->v = $request->valores;
-
-        dd($qr); 
+        
+        dd($request); 
         
         if ($request->id == "") {
             $quimica = new Quimica;
@@ -70,7 +66,8 @@ class QuimicaController extends Controller {
         {
             $quimicaResultado = new QuimicaResultado;
             $quimicaResultado->resultado = $qr->r[$i];
-            $quimicaResultado->valor_examen_id =$qr->v[$i];
+            $quimicaResultado->valor = "Hola";
+            $quimicaResultado->examen = "Hola";
             $quimicaResultado->quimica_id = $quimica->id;
             $quimicaResultado->save();
         }

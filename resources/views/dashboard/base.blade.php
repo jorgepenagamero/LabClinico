@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="App">
   <head>
     <meta charset="UTF-8">
     <title>Central | @yield('titulo')</title>
@@ -10,6 +10,7 @@
     <link href="{{ asset('css/AdminLTE.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/select2.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/skin-blue.min.css') }}" rel="stylesheet">
+    <script src="{{ asset('js/angular.min.js') }}"></script>
 
   </head>
   <body class="skin-blue">

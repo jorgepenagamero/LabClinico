@@ -39,7 +39,7 @@
 <script>
   
 var i = parseInt(document.getElementById('numvalores').value);
-
+// alert(i);
 $("#add_row").click(function(){
 $('#addr'+i).html("<td><input name='valores["+i+"]' type='text' class='form-control input-md' required autofocus/><td class='text-center'> <a onClick='eliminar("+i+");' class='btn btn-danger' alt='Eliminar'><i class='fa fa-minus'></i></a> </td>");
 
