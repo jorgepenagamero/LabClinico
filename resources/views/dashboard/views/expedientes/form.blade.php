@@ -18,7 +18,7 @@
                 <input type="number" name="edad" min="1" class="form-control" value="{{$paciente->edad}}" required>
             </div>
             <div class="col-sm-3">
-                <input name="consistencia" value="{{$paciente->detalle_edad}}" class="form-control" list="edades" />
+                <input name="detalle_edad" value="{{$paciente->detalle_edad}}" class="form-control" list="edades" />
                 <datalist id="edades">
                     <option value="Años"/>
                     <option value="Meses"/>
@@ -27,7 +27,11 @@
         </div>
     </div>
     <div class="box-footer">
-        <a href="{{ route('pacienteAnalisis', array($pacienteAnalisis->paciente_id)) }}" class="btn btn-default">Cancelar</a>
+        @if($pacienteAnalisis->paciente_id == "")
+            <a href="{{ route('expedientes') }}" class="btn btn-default">Cancelar</a>
+        @else
+            <a href="{{ route('pacienteAnalisis', array($pacienteAnalisis->paciente_id)) }}" class="btn btn-default">Cancelar</a>
+        @endif
         <button type="submit" class="btn btn-info pull-right"><i class="fa fa-arrow-right"></i></button>
     </div>
 </form>

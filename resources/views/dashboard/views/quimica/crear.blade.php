@@ -13,7 +13,7 @@
     </h1>
     <ol class="breadcrumb">
       <li><a href="/"><i class="fa fa-dashboard"></i> Inicio</a></li>
-      <li class="active">Quimica</li>
+      <li class="active">Orina</li>
     </ol>
     </section>
 
@@ -22,48 +22,49 @@
 @section('contenido')
 
 <section class="content">
-      
-    <div class="row col-sm-12">
-        <div class="box box-primary">
-          <h3 class="text-center col-xs-12">
-              @if($quimica->accion == "Editar")
-              <a href="{{ route('editarPaciente', array('quimica',$pacienteAnalisis->id)) }}" class="btn btn-default pull-left"><i class="fa fa-arrow-left"></i></a>
-              @endif
-              <strong>Paso 2:</strong> Examen quimica
-          </h3>
-          <hr>
-          @include('dashboard.views.quimica.form')
-        </div>
+
+    <div class="box box-info">
+        <h3 class="text-center col-xs-12">
+            @if($quimica->accion == "Editar")
+            <a href="{{ route('editarPaciente', array('quimica',$pacienteAnalisis->id)) }}" class="btn btn-default pull-left"><i class="fa fa-arrow-left"></i></a>
+            @endif
+            <strong>Paso 2:</strong> Examen quimica
+        </h3>
+        <hr>
+        @include('dashboard.views.quimica.form')
+
     </div>
+
 </section>
 
-@endsection
 
 
 @section('js')
 
 <script>
-  
-  $(document).ready(function(){
-    var i=1;
-    $("#add_row").click(function(){
-    $('#addr'+i).html("<td>"+ (i+1) +"</td><td><input name='examen["+i+"]' type='text' class='form-control input-md'  /> </td><td><input  name='resultado["+i+"]' type='text'  class='form-control input-md'></td><td><input  name='valores["+i+"]' type='text'  class='form-control input-md'></td>");
 
-    $('#tab_logic').append('<tr id="addr'+(i+1)+'"></tr>');
-    i++; 
-    });
+  var i= parseInt(document.getElementById('resultados').value);
 
-    $("#delete_row").click(function(){
-    
-          if(i>1){
-              $("#addr"+(i-1)).html('');
-              i--;
-          }
-    });
+  $("#add_row").click(function(){
+  $('#addr'+i).html("<td>"+ (i+1) +"</td><td><input type='text' class='form-control input-md'  /> </td><td><input  name='resultados["+i+"]' type='text'  class='form-control input-md' required></td><td><input  name='valores["+i+"]' type='text'  class='form-control input-md' required><td class='text-center'> <a onClick='eliminar("+(i)+");' class='btn btn-danger' alt='Eliminar'><i class='fa fa-minus'></i></a></td>");
 
+  $('#tab_logic').append('<tr id="addr'+(i+1)+'"></tr>');
+  i++; 
   });
+
+function eliminar(id){
+if(i>1){
+    // alert(i);
+    if (confirm("¿Seguro qué desea eliminar el valor?")) {
+        $("#addr"+(id)).remove();
+        i--;
+    };
+}
+}
+
 
 </script> 
 
+@endsection
 
 @endsection

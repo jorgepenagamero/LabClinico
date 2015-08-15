@@ -50,7 +50,7 @@ i++;
 
 function eliminar(id){
 if(i>1){
-    alert(i);
+    // alert(i);
     if (confirm("¿Seguro qué desea eliminar el valor?")) {
         $("#addr"+(id)).remove();
         i--;

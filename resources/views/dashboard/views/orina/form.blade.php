@@ -5,7 +5,7 @@
     <input type="hidden" name="paciente_id" value="{{ $paciente->id }}">
     <input type="hidden" name="tipo_analisis" value="Orina">
 
-    <div class="box-body">
+    <div class="row box-body">
         <div class="col-md-12 ">
             <div class="form-group">
                 <label for="medico" class="col-md-2 control-label">Medico</label>
@@ -33,7 +33,7 @@
                     <input type="text" class="form-control" name="otros" value="{{$orina->otros}}">
                 </div>
             </div>
-        </div>.
+        </div>
     </div>
     <div class="box-footer">
         <a href="{{ route('pacienteAnalisis', array($paciente->id)) }}" class="btn btn-default">Cancelar</a>

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateExamenValoresTable extends Migration {
+class CreateQuimicaResultadosTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,13 +12,14 @@ class CreateExamenValoresTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('examen_valores', function(Blueprint $table)
+		Schema::create('quimica_resultados', function(Blueprint $table)
 		{
 			$table->increments('id');
 
-			$table->integer('examen_id');
-			$table->string('valor',250);
-			
+			$table->string('resultado', 150);
+			$table->integer('valor_examen_id');
+			$table->integer('quimica_id');
+
 			$table->softDeletes();
 			$table->timestamps();
 		});
@@ -31,7 +32,7 @@ class CreateExamenValoresTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('examen_valores');
+		Schema::drop('quimica_resultados');
 	}
 
 }

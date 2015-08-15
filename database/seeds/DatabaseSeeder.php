@@ -15,7 +15,6 @@ class DatabaseSeeder extends Seeder {
 		Model::unguard();
 
 		$this->call('UsersTableSeeder');
-		
 		$this->call('ExamenesTableSeeder');
 		$this->call('ExamenValoresTableSeeder');
 		$this->call('PacientesTableSeeder');
@@ -23,6 +22,8 @@ class DatabaseSeeder extends Seeder {
 		$this->call('HemogramaTableSeeder');
 		$this->call('OrinaTableSeeder');
 		$this->call('HecesTableSeeder');
+		$this->call('QuimicaTableSeeder');
+		$this->call('QuimicaResultadoTableSeeder');
 	}
 
 }

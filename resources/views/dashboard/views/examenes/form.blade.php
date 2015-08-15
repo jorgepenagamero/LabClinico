@@ -17,25 +17,36 @@
         <h4 class="text-center"> Valores </h4>
 		<hr>
         <tbody>
+        @if($examen->accion == "Editar")
         @foreach ($valores as $index => $valor)
           <tr id='{{ 'addr'. $index}}'>
             <td> 
                 <input type="text" name='{{ 'valores['. $index .']'}}'  class="form-control" value="{{$valor->valor}}" required/> 
             </td>
+            @if($index>0)
             <td class="text-center">    
                 <a onClick="eliminar({{$index}});" class="btn btn-danger" alt="Eliminar"><i class="fa fa-minus"></i></a>
             </td>
+            @endif
           </tr>
-        @endforeach
           <tr id='{{'addr' . count($valores)}}'></tr>
+            <input type="hidden" id="numvalores" value="{{count($valores)}}">
+        @endforeach
+        @else
+            <tr id='addr0'>
+            <td> 
+                <input type="text" name='valores[0]' class="form-control" required/> 
+            </td>
+            <input type="hidden" id="numvalores" value="1">
+          </tr>
+          <tr id='addr1'></tr>
+        @endif
         </tbody>
-    </table>
-    <input type="hidden" id="numvalores" value="{{count($valores)}}">
-    <br>
-    <div class="col-xs-12 text-center">
-        <a id="add_row" class="btn btn-primary"><i class="fa fa-plus"></i></a>
-    </div>        
-        <br><br>
+        <tfooter>
+          <tr><td><a id="add_row" class="btn btn-primary pull-right"><i class="fa fa-plus"></i></a></td></tr>
+        </tfooter>
+    </table>        
+    <br><br>
 </div>
 <div class="box-footer">
     <a href="/examenes" class="btn btn-default">Volver</a>

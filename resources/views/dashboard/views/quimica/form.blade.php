@@ -3,15 +3,16 @@
     <input type="hidden" name="id" value="{{ $quimica->id }}">
     <input type="hidden" name="paciente_id" value="{{ $paciente->id }}">
     <input type="hidden" name="tipo_analisis" value="Quimica">
+    
+    <div class="box-body">
         <div class="col-md-12 ">
-            <div class="form-group">
-                <label for="medico" class="col-md-4 control-label">Medico</label>
-                <div class="col-md-5">
-                    <input type="text" name="medico" class="form-control" value="{{$quimica->medico}}"required autofocus>
-                </div>
-            </div>
+          <div class="form-group">
+              <label for="medico" class="col-md-4 control-label">Medico</label>
+              <div class="col-md-5">
+                  <input type="text" name="medico" class="form-control" value="{{$quimica->medico}}"required autofocus>
+              </div>
+          </div>
         </div>
-      <div class="box-body table-responsive">
           <table class="table table-bordered" id="tab_logic">
               <thead>
                   <tr> 
@@ -22,20 +23,39 @@
                   </tr>
               </thead>
               <tbody>
-
+              @if($quimica->accion == "Editar")
+                @foreach($quimica->resultados as $index => $resultado)
+                <tr id='{{ 'addr'.$index }}'>
+                  <td> 1 </td>
+                  <td> <input type="text" value="{{$resultado->evalor->examen->nombre}}" class="form-control"/> </td>
+                  <td> <input type="text" value="{{$resultado->resultado}}" name='{{ 'resultados[' . $index . ']' }}' class="form-control" required/> </td>
+                  <td> <input type="text" value="{{$resultado->evalor->valor}}" name='{{ 'valores[' . $index . ']' }}' class="form-control" required/> </td>
+                  <td class="text-center">    
+                      <a onClick="eliminar({{$index}});" class="btn btn-danger" alt="Eliminar"><i class="fa fa-minus"></i></a>
+                  </td>
+                </tr>
+                <input type="hidden" id="resultados" value="{{ count($quimica->resultados) }}">
+                <tr id='{{ 'addr'. count($quimica->resultados) }}'></tr>
+                @endforeach
+                @else
                 <tr id='addr0'>
                   <td> 1 </td>
-                  <td> <input type="text" name='examen[0]'  class="form-control"/> </td>
-                  <td> <input type="text" name='resultado[0]' class="form-control"/> </td>
-                  <td> <input type="text" name='valores[0]' class="form-control"/> </td>
+                  <td> <input type="text" class="form-control"/> </td>
+                  <td> <input type="text" name="resultados[0]" class="form-control" required/> </td>
+                  <td> <input type="text" name="valores[0]" class="form-control" required/> </td>
+                  <td style="width:50px;"></td>
                 </tr>
+                <input type="hidden" id="resultados" value="1">
                 <tr id='addr1'></tr>
-
-              </tbody>
+                @endif
+                </tbody>
+                <tfooter>
+                  <tr>
+                    <td></td><td></td><td></td>
+                    <td><a id="add_row" class="btn btn-primary pull-right"><i class="fa fa-plus"></i></a></td>
+                  </tr>
+                </tfooter>
           </table>
-          <br>
-          <a id='delete_row' class="btn btn-danger pull-left"><i class="fa">-</i></a>
-          <a id="add_row" class="btn btn-primary pull-right"><i class="fa">+</i></a>
       </div>
 
       <div class="box-footer">

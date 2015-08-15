@@ -23,13 +23,12 @@
 
 <section class="content">
 
-
     <div class="box box-info">
         <h3 class="text-center col-xs-12">
             @if($orina->accion == "Editar")
             <a href="{{ route('editarPaciente', array('orina',$pacienteAnalisis->id)) }}" class="btn btn-default pull-left"><i class="fa fa-arrow-left"></i></a>
             @endif
-            <strong>Paso 2:</strong> Examen Orina
+            <strong>Paso 2:</strong> Examen orina
         </h3>
         <hr>
         @include('dashboard.views.orina.form')

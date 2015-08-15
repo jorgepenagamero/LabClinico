@@ -33,7 +33,7 @@ class ExpedientesController extends Controller {
 	}
 	
 	public function guardar(Request $request){
-		return $request->detalle_edad; 
+		// return $request->detalle_edad; 
 		// return ($request->id ." ". $request->analisis ." ". $request->analisis_id);
 		$this->validate($request, ['nombre' => 'required|max:150', 'edad' => 'required|numeric']);
 		

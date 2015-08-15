@@ -14,7 +14,7 @@ class ExamenValoresTableSeeder extends Seeder {
         {
             $examen = new ExamenValor;
 
-            $examen->examen_id = $faker->numberBetween(1,15);
+            $examen->examen_id = $faker->numberBetween(1,30);
             $examen->valor     = $faker->company;
             
             $examen->save();

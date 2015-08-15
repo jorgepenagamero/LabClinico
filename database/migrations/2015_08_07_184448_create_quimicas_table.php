@@ -16,8 +16,7 @@ class CreateQuimicasTable extends Migration {
 		{
 			$table->increments('id');
 
-			$table->integer('examen_id');
-			$table->string('examen',250);
+			// $table->string('medico');
 
 			$table->softDeletes();
 			$table->timestamps();
