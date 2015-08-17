@@ -57,7 +57,7 @@ class ExpedientesController extends Controller {
 		$paciente->detalle_edad = $request->detalle_edad;
 		$paciente->save();
 
-		if ($request->analisis = "elejir") {
+		if ($request->analisis == "elejir") {
 			$ruta = "/paciente/analisis/" . $paciente->id;
 		}
 		else{
