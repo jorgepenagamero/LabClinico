@@ -35,39 +35,38 @@ class QuimicaController extends Controller {
     }
 
     public function guardar(Request $request){
-        
-        dd($request); 
-        
+
+        // dd($request);
+
         if ($request->id == "") {
+            // return "Nuevo";
             $quimica = new Quimica;
             $pacienteAnalisis = new PacienteAnalisis;
         }else{
             $quimica = Quimica::find($request->id);
             $pacienteAnalisis = PacienteAnalisis::where('analisis', 'quimica')->where('analisis_id', $request->id)->first();
             $this->elimarValores($quimica->id);
-            // return $this->elimarValores($quimica->id);;
         }
 
         $this->validate($request, ['paciente_id' => 'required|numeric', 'medico' => 'required|max:150', 
                                     'tipo_analisis' => 'required|max:150']);
 
-        // Guardar analisis
+        // Guardar examen
         $quimica->save();
 
-        // Guardar relacion con el paciente.
+        // Guardar analisis.
         $pacienteAnalisis->paciente_id = $request->paciente_id;
         $pacienteAnalisis->medico = $request->medico;
         $pacienteAnalisis->analisis = $request->tipo_analisis;
         $pacienteAnalisis->analisis_id = $quimica->id;
         $pacienteAnalisis->save();
-        // return count($request->resultado);
+
         // Guardar resultados del paciente
-        for($i = 0; $i < count($qr); $i++)
-        {
+        foreach ($request->resultado as $key => $value) {
             $quimicaResultado = new QuimicaResultado;
-            $quimicaResultado->resultado = $qr->r[$i];
-            $quimicaResultado->valor = "Hola";
-            $quimicaResultado->examen = "Hola";
+            $quimicaResultado->resultado = $request->resultado[$key];
+            $quimicaResultado->valor = $request->valor[$key];
+            $quimicaResultado->examen = $request->examen[$key];
             $quimicaResultado->quimica_id = $quimica->id;
             $quimicaResultado->save();
         }
@@ -96,7 +95,6 @@ class QuimicaController extends Controller {
             $valor->delete();
         }
 
-        // return "ready";
     }
 
 

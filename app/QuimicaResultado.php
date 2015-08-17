@@ -7,8 +7,8 @@ class QuimicaResultado extends Model {
 
     protected $SoftDeletes = true;
 
-    public function evalor(){
-        return $this->belongsTo('App\ExamenValor', 'valor_examen_id');
-    }
+    // public function evalor(){
+    //     return $this->belongsTo('App\ExamenValor', 'valor_examen_id');
+    // }
 
 }

@@ -33,8 +33,7 @@ class ExpedientesController extends Controller {
 	}
 	
 	public function guardar(Request $request){
-		// return $request->detalle_edad; 
-		// return ($request->id ." ". $request->analisis ." ". $request->analisis_id);
+
 		$this->validate($request, ['nombre' => 'required|max:150', 'edad' => 'required|numeric']);
 		
 		// Paciente nuevo
@@ -50,7 +49,6 @@ class ExpedientesController extends Controller {
 		}
 		// Editar paciente desde Analisis
 		else {
-			// return "nuevo";
 			$paciente = new Paciente;
 		}
 
@@ -59,17 +57,22 @@ class ExpedientesController extends Controller {
 		$paciente->detalle_edad = $request->detalle_edad;
 		$paciente->save();
 
-		// Paciente nuevo
-		if (($request->id == "") && ($request->analisis_id == "")){
-			$ruta = strtolower($request->analisis)."/crear/".$paciente->id;
+		if ($request->analisis = "elejir") {
+			$ruta = "/paciente/analisis/" . $paciente->id;
 		}
-		// Editar paciente
-		elseif (($request->analisis_id == "") && ($request->id != "")){
-			$ruta = 'expedientes';
-		}
-		// Editar paciente desde Analisis
 		else{
-			$ruta = strtolower($pacienteAnalisis->analisis)."/editar/".$request->analisis_id;
+			// Paciente nuevo
+			if (($request->id == "") && ($request->analisis_id == "")){
+				$ruta = strtolower($request->analisis)."/crear/".$paciente->id;
+			}
+			// Editar paciente
+			elseif (($request->analisis_id == "") && ($request->id != "")){
+				$ruta = 'expedientes';
+			}
+			// Editar paciente desde Analisis
+			else{
+				$ruta = strtolower($pacienteAnalisis->analisis)."/editar/".$request->analisis_id;
+			}
 		}
 
         return Redirect($ruta);

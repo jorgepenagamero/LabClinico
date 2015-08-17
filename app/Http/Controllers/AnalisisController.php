@@ -9,6 +9,8 @@ use App\Paciente;
 use App\Orina;
 use App\Hemograma;
 use App\Heces;
+use App\QuimicaResultado;
+use App\Quimica;
 
 class AnalisisController extends Controller {
 
@@ -20,10 +22,9 @@ class AnalisisController extends Controller {
 
 
     public function analisis($analisis, $id){
-
-    	$pacienteAnalisis = PacienteAnalisis::where('analisis', $analisis)->where('analisis_id', $id)->first();
-    	$paciente = Paciente::find($pacienteAnalisis->paciente_id);
-    	$paciente->medico = $pacienteAnalisis->medico;
+        $pacienteAnalisis = PacienteAnalisis::where('analisis', $analisis)->where('analisis_id', $id)->first();
+        $paciente = Paciente::find($pacienteAnalisis->paciente_id);
+        $paciente->medico = $pacienteAnalisis->medico;
 
         switch ($analisis) {
             case 'orina':
@@ -37,7 +38,13 @@ class AnalisisController extends Controller {
             case 'heces':
                 $data = Heces::find($id);
                 break;
+
+            case 'quimica':
+                $data = QuimicaResultado::where('quimica_id', $id)->get();
+                $data->created_at = Quimica::find($id)->created_at;
+                break;
         }
+
  		$pdf = \PDF::loadView('pdf.' . $analisis, compact('analisis', 'data', 'paciente'))->setPaper([0,0,612,396]);
  		return $pdf->stream();
 
