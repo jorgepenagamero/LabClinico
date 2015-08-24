@@ -1,4 +1,4 @@
-<form class="form-horizontal" method="POST" action="{{route('quimicaCrear')}}" ng-controller="BuscadorCtrl">
+<form class="form-horizontal" method="POST" action="{{route('quimicaCrear')}}" ng-controller="BuscadorCtrl" autocomplete="off">
 	<input type="hidden" name="_token" value="{{ csrf_token() }}">
 	<input type="hidden" name="id" value="{{ $quimica->id }}">
 	<input type="hidden" name="paciente_id" value="{{ $paciente->id }}">
@@ -37,7 +37,11 @@
 				<tr>
 					<td></td><td></td><td></td><td></td>
 					<td class="text-center">
+						@if($paciente->accion == "Editar")
+						<a onclick="agregar();" class="btn btn-primary"><i class="fa fa-plus"></i></a>
+						@else
 						<a ng-click="add(1);" class="btn btn-primary"><i class="fa fa-plus"></i></a>
+						@endif
 					</td>
 				</tr>
 			</tfooter>

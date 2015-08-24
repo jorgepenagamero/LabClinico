@@ -1,7 +1,7 @@
 @extends('dashboard.base')
 
 @section('titulo')
-  Dashboard
+  Orina
 @endsection
 
 @section('bread')

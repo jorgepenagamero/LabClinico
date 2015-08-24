@@ -1,4 +1,4 @@
-<form class="form-horizontal" method="POST" action="{{route('crearExamen')}}">
+<form class="form-horizontal" method="POST" action="{{route('crearExamen')}}" autocomplete="off">
 
 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 <input type="hidden" name="id" value="{{ $examen->id }}">
@@ -35,10 +35,10 @@
           <tr id='{{'addr' . count($valores)}}'></tr>
         @else
             <tr id='addr0'>
-            <td style="width:50px;"></td>
-            <td style="width:50px;"> 
+            <td> 
                 <input type="text" name='valores[0]' class="form-control" required/> 
             </td>
+            <td style="width:50px;"></td>
             <input type="hidden" id="numvalores" value="1">
           </tr>
           <tr id='addr1'></tr>

@@ -40,7 +40,7 @@
                     <div class="small-box bg-aqua">
                         <div class="inner"> <h3>Orina</h3> <p>Examen</p> </div>
                         <div class="icon"> <i class="fa fa-list"></i> </div>
-                        <p href="#" class="small-box-footer">Ir <i class="fa fa-arrow-circle-right"></i></p>
+                        <p href="#" class="small-box-footer">Crear <i class="fa fa-arrow-circle-right"></i></p>
                     </div>
                 </a>
 
@@ -48,7 +48,7 @@
                     <div class="small-box bg-green">
                         <div class="inner"> <h3>Diversos</h3> <p>Examen</p> </div>
                         <div class="icon"> <i class="fa fa-list"></i> </div>
-                        <p href="#" class="small-box-footer">Ir <i class="fa fa-arrow-circle-right"></i></p>
+                        <p href="#" class="small-box-footer">Crear <i class="fa fa-arrow-circle-right"></i></p>
                     </div>
                 </a>
 
@@ -56,7 +56,7 @@
                     <div class="small-box bg-blue">
                         <div class="inner"> <h3>Hemograma</h3> <p>Examen</p> </div>
                         <div class="icon"> <i class="fa fa-list"></i> </div>
-                        <p href="#" class="small-box-footer">Ir <i class="fa fa-arrow-circle-right"></i></p>
+                        <p href="#" class="small-box-footer">Crear <i class="fa fa-arrow-circle-right"></i></p>
                     </div>
                 </a>
 
@@ -64,7 +64,7 @@
                     <div class="small-box bg-red">
                         <div class="inner"> <h3>Heces</h3> <p>Examen</p> </div>
                         <div class="icon"> <i class="fa fa-list"></i> </div>
-                        <p href="#" class="small-box-footer">Ir <i class="fa fa-arrow-circle-right"></i></p>
+                        <p href="#" class="small-box-footer">Crear <i class="fa fa-arrow-circle-right"></i></p>
                     </div>
                 </a>
 
@@ -72,7 +72,7 @@
                     <div class="small-box bg-yellow">
                         <div class="inner"> <h3>Quimica</h3> <p>Examen</p> </div>
                         <div class="icon"> <i class="fa fa-list"></i> </div>
-                        <p href="#" class="small-box-footer">Ir <i class="fa fa-arrow-circle-right"></i></p>
+                        <p href="#" class="small-box-footer">Crear <i class="fa fa-arrow-circle-right"></i></p>
                     </div>
                 </a>
               </div>
@@ -111,7 +111,7 @@
                                     <i class="fa fa-book"></i>
                                 </a>                            
                             @elseif($analisis->analisis == 'Quimica')
-                                <a href="{{ route('quimicaEditar', array($analisis->analisis_id)) }}" class="btn btn-default" title="Historial">
+                                <a href="{{ route('quimicaEditar', array($analisis->id)) }}" class="btn btn-default" title="Historial">
                                     <i class="fa fa-book"></i>
                                 </a>
                             @endif

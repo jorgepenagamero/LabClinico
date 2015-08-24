@@ -1,4 +1,4 @@
-<form class="form-horizontal" method="POST" action="{{route('hecesCrear')}}">
+<form class="form-horizontal" method="POST" action="{{route('hecesCrear')}}" autocomplete="off">
     {{-- <input type="hidden" name="_method" value="PUT"> --}}
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
     <input type="hidden" name="id" value="{{ $heces->id }}">

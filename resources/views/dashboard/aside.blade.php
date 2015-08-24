@@ -3,19 +3,19 @@
     <!-- Sidebar User -->
     <div class="user-panel">
       <div class="pull-left image">
-        <img src="/img/logo.svg" class="img-circle" alt="User Image" />
+        <img src="/img/logo.png" class="img-circle" alt="Imagen de usuario" />
       </div>
       <div class="pull-left info">
-        <p>{{ Auth::user()->name }}</p>
+        <p style="width:130px;">{{ Auth::user()->name }}</p>
         <a href="#"><i class="fa fa-circle text-success"></i> Trabajando</a>
       </div>
     </div>
     <!-- Buscador -->
-    <form action="#" method="get" class="sidebar-form">
+    <form method="get" class="sidebar-form" action="{{url('paciente/buscar/')}}" role="search" >
       <div class="input-group">
-        <input type="text" name="q" class="form-control" placeholder="Buscar..."/>
+        <input type="text" name="txt" class="form-control" placeholder="Buscar..."/>
         <span class="input-group-btn">
-          <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
+          <button type='submit' class="btn btn-flat"><i class="fa fa-search"></i></button>
         </span>
       </div>
     </form>
@@ -45,11 +45,11 @@
               <span>Expedientes</span></a>
             </i>
             </li>
-            <li><a href="{{ route('perfil') }}"><i class="fa fa-user-md"></i>
+            {{-- <li><a href="{{ route('perfil') }}"><i class="fa fa-user-md"></i>
               <span>Perfil</span></a>
-            </li>
+            </li> --}}
             <li><a href="{{ route('info') }}"><i class="fa fa-info"></i>
-              <span>Información</span></a>
+              <span>Contacto</span></a>
             </li>
     </ul>
 

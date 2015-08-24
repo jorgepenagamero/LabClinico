@@ -1,7 +1,7 @@
 @extends('dashboard.base')
 
 @section('titulo')
-  Dashboard
+  Expedientes
 @endsection
 
 @section('bread')
@@ -27,7 +27,9 @@
 
         <div class="btn-group"  style="margin:5px;">
             <div class="pull-left">
-                <input class="form-control" type="search" ng-model="buscar" placeholder="Buscar">
+                <form method="get" action="{{url('paciente/buscar/')}}" role="search" >
+                <input class="form-control" type="search" name="txt" placeholder="Buscar">
+                </form>
             </div>
             <a href="{{ route('crearPaciente', array('elejir')) }}" class="btn btn-default"> 
                 <i class="glyphicon glyphicon-plus"></i>  Agregar

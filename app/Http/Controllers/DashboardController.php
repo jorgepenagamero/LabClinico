@@ -15,7 +15,8 @@ class DashboardController extends Controller {
 
 	public function index()
 	{
-		$pacienteAnalisis = PacienteAnalisis::take(4)->orderBy('id','desc')->get();;
+
+		$pacienteAnalisis = PacienteAnalisis::take(7)->orderBy('id','desc')->get();;
 		return view('dashboard.views.index', compact('pacienteAnalisis'));
 	}
 

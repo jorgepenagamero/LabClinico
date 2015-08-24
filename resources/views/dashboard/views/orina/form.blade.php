@@ -1,5 +1,4 @@
-<form class="form-horizontal" method="POST" action="{{route('orinaCrear')}}">
-    {{-- <input type="hidden" name="_method" value="PUT"> --}}
+<form class="form-horizontal" method="POST" action="{{route('orinaCrear')}}" autocomplete="off">
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
     <input type="hidden" name="id" value="{{ $orina->id }}">
     <input type="hidden" name="paciente_id" value="{{ $paciente->id }}">

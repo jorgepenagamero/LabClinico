@@ -1,12 +1,13 @@
 <datalist id="color">
-    <option value="Cafe">
     <option value="Amarillo">
-    <option value="Verde">
-    <option value="Negro">
+    <option value="Rojizo">
+    <option value="Incoloro">
+    <option value="Anaranjado">
+    <option value="Amarillo ambar">
 </datalist>
 
 <datalist id="aspecto">
-    <option value="Limpia">
+    <option value="Limpio">
     <option value="Leve turbia">
     <option value="Turbia">
     <option value="Moderada turbidez">
@@ -22,10 +23,10 @@
 </datalist>
 
 <datalist id="esterasa">
-    <option value="10 - 25 leu/ul (+-)">
-    <option value="70 leu/ul (+)">
-    <option value="125 leu/ul (++)">
-    <option value="500 leu/ul (+++)">
+    <option value="10 - 25 leu/&micro L (&plusmn)">
+    <option value="70 leu/&micro L (+)">
+    <option value="125 leu/&micro L (++)">
+    <option value="500 leu/&micro L (+++)">
 </datalist>
 
 <datalist id="nitritos">
@@ -43,7 +44,7 @@
 
 <datalist id="proteinas">
     <option value="Negativo">
-    <option value="Positivo 15 mgl/dl (+-)">
+    <option value="Positivo 15 mgl/dl (&plusmn)">
     <option value="Positivo 30 mgl/dl (+)">
     <option value="Positivo 100 mgl/dl (++)">
     <option value="Positivo 500 mgl/dl (+++)">
@@ -51,7 +52,7 @@
 
 <datalist id="glucosa">
     <option value="Normal">
-    <option value="100 mgl/dl (+-)">
+    <option value="100 mgl/dl (&plusmn)">
     <option value="250 mgl/dl (+)">
     <option value="500 mgl/dl (++)">
     <option value="1000 mgl/dl (+++)">
@@ -60,7 +61,7 @@
 
 <datalist id="cetonicos">
     <option value="Negativo">
-    <option value="5 mgl/dl (+-)">
+    <option value="5 mgl/dl (&plusmn)">
     <option value="15 mgl/dl (+)">
     <option value="40 mgl/dl (++)">
     <option value="80 mgl/dl (+++)">
@@ -69,7 +70,7 @@
 
 <datalist id="urobitmogeno">
     <option value="Normal">
-    <option value="1 mgl/dl (+-)">
+    <option value="1 mgl/dl (&plusmn)">
     <option value="2 mgl/dl (+)">
     <option value="4 mgl/dl (++)">
     <option value="8 mgl/dl (+++)">
@@ -88,8 +89,8 @@
     <option value="Positivo (+)">
     <option value="Positivo (++)">
     <option value="Positivo (+++)">
-    <option value="5 - 10 Ery/ul">
-    <option value="50 Ery/ul">
+    <option value="5 - 10 Ery/&micro L">
+    <option value="50 Ery/&micro L">
 </datalist>
 
 <datalist id="bacterias">
@@ -98,15 +99,7 @@
     <option value="Abundantes">
 </datalist>
 
-<datalist id="leucocitos">
-    <option value="No se observan">
-</datalist>
-
-<datalist id="hematies">
-    <option value="No se observan">
-</datalist>
-
-<datalist id="cilindros">
+<datalist id="no">
     <option value="No se observan">
 </datalist>
 

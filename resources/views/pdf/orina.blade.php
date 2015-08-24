@@ -5,31 +5,23 @@
 	<style>
 	    @page { margin: 20px 30px;}
 
-	    header{}
 	    p{margin: 0px; padding: 0px; font-size: 14px;}
 	    h4{margin: 5px 0;}
 
-	    #info{  width: 64%; display: inline-block;}
-	    #logo{  width: 35%; display: inline-block; text-align: right;}
-	    #paciente p {display: inline;}
 	    #panel{width: 49%; display: inline-block;}
 	    table tr{font-size: 13px;}
 	    table{width: 100%}
 
 	    section{margin-top: 15px; padding: 5px; border: 1px solid gray;}
-
-	    footer{ margin-top:25px; text-align: center;}
 		
 	</style>
 
 	<title>Examen Orina</title>
 </head>
 <body>
-	<header>
 		
-		@include('pdf.header')
-		
-	</header>
+	@include('pdf.header')
+
 	<section>
 		<div id="panel">
 			<h4>EXAMEN FISICO</h4>
@@ -66,10 +58,9 @@
 			</table>
 		</div>		
 	</section>
-	<footer>
-		<p>FIRMA:_______________________________</p>
-		<p><strong>CARMEN MARISOL FLORES ARIAS</strong></p>
-	</footer>
+	
+	@include('pdf.footer')
+
 </div>
 </body>
 </html>

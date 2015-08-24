@@ -1,4 +1,4 @@
- <form class="form-horizontal" method="POST" action="{{route('crearPaciente')}}">
+ <form class="form-horizontal" method="POST" action="{{route('crearPaciente')}}" autocomplete="off">
     {{-- <input type="hidden" name="_method" value="PUT"> --}}
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
     <input type="hidden" name="id" value="{{ $paciente->id }}">
@@ -28,7 +28,7 @@
     </div>
     <div class="box-footer">
         @if($pacienteAnalisis->paciente_id == "")
-            <a href="{{ route('expedientes') }}" class="btn btn-default">Cancelar</a>
+            <a href="{{ route('expedientes') }}" class="btn btn-default">Volver</a>
         @else
             <a href="{{ route('pacienteAnalisis', array($pacienteAnalisis->paciente_id)) }}" class="btn btn-default">Cancelar</a>
         @endif

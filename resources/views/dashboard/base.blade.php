@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html ng-app="App">
+<html>
   <head>
     <meta charset="UTF-8">
     <title>Central | @yield('titulo')</title>
+
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+     <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
     
-    <!-- Bootstrap 3.3.2 -->
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('css/AdminLTE.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/select2.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/skin-blue.min.css') }}" rel="stylesheet">
     <script src="{{ asset('js/angular.min.js') }}"></script>
+    <script src="{{ asset('js/modernizr.js') }}"></script>
 
   </head>
   <body class="skin-blue">
@@ -34,10 +35,8 @@
 
     <script src="{{ asset('js/classie.js') }}"></script>
     <script src="{{ asset('js/bootstrap.js') }}"></script>
-    <script src="{{ asset('js/select2.min.js') }}"></script>
     <script src="{{ asset('js/jquery.slimScroll.min.js') }}"></script>
-    {{-- // <script src="{{ asset('dash/js/dashboard.js') }}"></script> --}}
-    <script src="{{ asset('js/app.min.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
   
     @yield('js')
   </body>

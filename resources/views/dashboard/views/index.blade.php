@@ -12,8 +12,7 @@
       <small>Panel de Control</small>
     </h1>
     <ol class="breadcrumb">
-      <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-      <li class="active">Dashboard</li>
+      <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
     </ol>
     </section>
 
@@ -34,7 +33,7 @@
                 <div class="icon">
                   <i class="fa fa-list"></i>
                 </div>
-                <p href="#" class="small-box-footer">Ir <i class="fa fa-arrow-circle-right"></i></p>
+                <p href="#" class="small-box-footer">Crear <i class="fa fa-arrow-circle-right"></i></p>
             </div>
         </a>
 
@@ -47,7 +46,7 @@
                 <div class="icon">
                   <i class="fa fa-list"></i>
                 </div>
-                <p href="#" class="small-box-footer">Ir <i class="fa fa-arrow-circle-right"></i></p>
+                <p href="#" class="small-box-footer">Crear <i class="fa fa-arrow-circle-right"></i></p>
             </div>
         </a>
 
@@ -60,7 +59,7 @@
                 <div class="icon">
                   <i class="fa fa-list"></i>
                 </div>
-                <p href="#" class="small-box-footer">Ir <i class="fa fa-arrow-circle-right"></i></p>
+                <p href="#" class="small-box-footer">Crear <i class="fa fa-arrow-circle-right"></i></p>
             </div>
         </a>
 
@@ -73,7 +72,7 @@
                 <div class="icon">
                   <i class="fa fa-list"></i>
                 </div>
-                <p href="#" class="small-box-footer">Ir <i class="fa fa-arrow-circle-right"></i></p>
+                <p href="#" class="small-box-footer">Crear <i class="fa fa-arrow-circle-right"></i></p>
             </div>
         </a>
 
@@ -86,7 +85,7 @@
                 <div class="icon">
                   <i class="fa fa-list"></i>
                 </div>
-                <p href="#" class="small-box-footer">Ir <i class="fa fa-arrow-circle-right"></i></p>
+                <p href="#" class="small-box-footer">Crear <i class="fa fa-arrow-circle-right"></i></p>
             </div>
         </a>
 
@@ -99,14 +98,14 @@
                 <div class="box-header">
                   <h3 class="box-title">Historial</h3>
                   {{-- Buscador --}}
-                  <div class="box-tools">
+                  {{-- <div class="box-tools">
                     <div class="input-group" style="width: 150px;">
                       <input type="text" name="historial_buscador" class="form-control input-sm pull-right" placeholder="Buscar">
                       <div class="input-group-btn">
                         <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
                       </div>
                     </div>
-                  </div>
+                  </div> --}}
                 </div>
 
                 <div class="box-body table-responsive no-padding">

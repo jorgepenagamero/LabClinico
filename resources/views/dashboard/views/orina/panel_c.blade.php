@@ -7,25 +7,25 @@
 <div class="form-group">
     <label for="leucocitos" class="col-md-3 control-label">Leucocitos</label>
     <div class="col-md-8">
-        <input name="leucocitos" value="{{$orina->leucocitos}}" class="form-control" list="leucocitos" /> 
+        <input name="leucocitos" value="{{$orina->leucocitos}}" class="form-control" list="no" /> 
     </div>
 </div>
 <div class="form-group">
     <label for="hematies" class="col-md-3 control-label">Hematies</label>
     <div class="col-md-8">
-        <input name="hematies" value="{{$orina->hematies}}" class="form-control" list="hematies" /> 
+        <input name="hematies" value="{{$orina->hematies}}" class="form-control" list="no" /> 
     </div>
 </div>
 <div class="form-group">
     <label for="cilindros" class="col-md-3 control-label">Cilindros</label>
     <div class="col-md-8">
-        <input name="cilindros" value="{{$orina->cilindros}}" class="form-control" list="cilindros" /> 
+        <input name="cilindros" value="{{$orina->cilindros}}" class="form-control" list="no" /> 
     </div>
 </div>
 <div class="form-group">
     <label for="cristales" class="col-md-3 control-label">Cristales</label>
     <div class="col-md-8">
-        <input type="text" class="form-control" name="cristales" value="{{$orina->cristales}}">
+        <input type="text" class="form-control" name="cristales" value="{{$orina->cristales}}" list="no">
     </div>
 </div>
 <div class="form-group">

@@ -15,15 +15,16 @@ class DatabaseSeeder extends Seeder {
 		Model::unguard();
 
 		$this->call('UsersTableSeeder');
-		$this->call('ExamenesTableSeeder');
-		$this->call('ExamenValoresTableSeeder');
-		$this->call('PacientesTableSeeder');
-		$this->call('PacienteAnalisisTableSeeder');
-		$this->call('HemogramaTableSeeder');
-		$this->call('OrinaTableSeeder');
-		$this->call('HecesTableSeeder');
-		$this->call('QuimicaTableSeeder');
-		$this->call('QuimicaResultadoTableSeeder');
+		// $this->call('ExamenesTableSeeder');
+		// $this->call('ExamenValoresTableSeeder');
+		// $this->call('PacientesTableSeeder');
+		// $this->call('PacienteAnalisisTableSeeder');
+		// $this->call('HemogramaTableSeeder');
+		// $this->call('OrinaTableSeeder');
+		// $this->call('HecesTableSeeder');
+		// $this->call('QuimicaTableSeeder');
+		// $this->call('QuimicaResultadoTableSeeder');
+		// $this->call('DiversoTableSeeder');
 	}
 
 }

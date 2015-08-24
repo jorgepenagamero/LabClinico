@@ -29,6 +29,6 @@
 	</td>
 </tr>
 
-<input type="hidden" value="{{$resultado->examen}}" value="{{ count($quimica->resultados) }}">
+<input type="hidden" id="numvalores" value="0">
 
 <tr id='addr1'></tr>

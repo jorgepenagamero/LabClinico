@@ -9,15 +9,13 @@
     </a>
     <div class="navbar-custom-menu">
       <ul class="nav navbar-nav">
-        {{-- <i>{{ Carbon/carbon->now()}}</i> --}}
-
-        {{-- @include('dashboard.header.mensajes') --}}
-
-        {{-- @include('dashboard.header.notificaciones') --}}
-
-        {{-- @include('dashboard.header.tareas') --}}
         
-        @include('dashboard.header.perfil')
+        <li class="dropdown user user-menu">
+          <a href="/auth/logout">
+            
+          <i class="fa fa-power-off"></i> Salir 
+          </a>
+        </li>
 
       </ul>
     </div>

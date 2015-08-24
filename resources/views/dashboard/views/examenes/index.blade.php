@@ -27,7 +27,9 @@
         <div class="box-header">
             <div class="btn-group">
                 <div class="pull-left">
-                    <input class="form-control" type="search" ng-model="buscar" placeholder="Buscar">
+                    <form method="get" action="{{url('examen/buscar/')}}" role="search" >
+                    <input class="form-control" type="search" name="txt" placeholder="Buscar">
+                    </form>
                 </div>
                 <a href="{{ route('crearExamen') }}" class="btn btn-primary"> 
                     <i class="glyphicon glyphicon-plus"></i>  Agregar

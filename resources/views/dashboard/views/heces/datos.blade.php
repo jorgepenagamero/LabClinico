@@ -20,8 +20,8 @@
     <option value="Positivo (+)">
     <option value="Positivo (++)">
     <option value="Positivo (+++)">
-    <option value="5 - 10 Ery/ul">
-    <option value="50 Ery/ul">
+    <option value="5 - 10 Ery/&micro L">
+    <option value="50 Ery/&micro L">
 </datalist>
 
 <datalist id="restos">

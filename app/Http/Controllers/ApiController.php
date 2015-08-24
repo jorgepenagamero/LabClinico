@@ -2,10 +2,12 @@
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
-use Carbon\Carbon;
+use Illuminate\Http\Request;
+// use Carbon\Carbon;
 
 use App\Examen;
 use App\ExamenValor;
+use App\Paciente;
 
 class ApiController extends Controller {
 
@@ -21,18 +23,6 @@ class ApiController extends Controller {
 		// return view('dashboard.views.otros.perfil');
 	}
 
-	public function perfil()
-	{
-
-		$date = Carbon::now();
-		$date->setTimezone('UTC -06:00');
-		return view('dashboard.views.otros.perfil', compact('date'));
-	}
-
-	public function guardar()
-	{
-		// return view('dashboard.views.otros.perfil');
-	}
 
 	public function info()
 	{
@@ -51,6 +41,23 @@ class ApiController extends Controller {
 		$valores = ExamenValor::where('examen_id', $id)->get();
 
 		return (new Response($valores,200))->header('Content-Type', 'application/json');
+	}
+
+	public function buscarPaciente(Request $request){
+
+		$txt = $request->get('txt');
+		// return $txt;
+		$pacientes = Paciente::where('nombre', 'LIKE', '%'.$txt.'%')->orderBy('nombre','asc')->get();
+
+		return view('dashboard.views.expedientes.index', compact('pacientes'));
+	}
+	public function buscarExamenL(Request $request){
+
+		$txt = $request->get('txt');
+		
+		$examenes = Examen::where('nombre', 'LIKE', '%'.$txt.'%')->orderBy('nombre','asc')->get();
+
+		return view('dashboard.views.examenes.index', compact('examenes'));
 	}
 
 }

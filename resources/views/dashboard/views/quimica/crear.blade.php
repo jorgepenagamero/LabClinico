@@ -21,7 +21,7 @@
 
 @section('contenido')
 
-<section class="content">
+<section class="content" ng-app="App">
 
 	<div class="box box-info">
 		<h3 class="text-center col-xs-12">
@@ -43,7 +43,31 @@
 
 <script>
 
+    var i = parseInt(document.getElementById('numvalores').value);
+    console.log("Inicio: " + i);
+
+    function agregar(){
+        $('#addr'+i).html("<td class='text-center'>" + (i+1) + "</td> <td> <input type='text' name='examen["+i+"]' class='form-control' required/> </td> <td> <input type='text' name='resultado["+i+"]' class='form-control' required/> </td> <td> <input type='text' name='valor["+i+"]' class='form-control' required/> </td> <td class='text-center'> <a onClick='eliminar("+i+");' class='btn btn-danger' alt='Eliminar'><i class='fa fa-minus'></i></a> </td> </td>");
+
+        $('#tab_logic').append('<tr id="addr'+(i+1)+'"></tr>');
+        i++;
+        console.log("Despues de add: "+i);
+    };
+
+
+    function eliminar(id){
+    if(i>1){
+        console.log(id);
+        if (confirm("¿Seguro qué desea eliminar el valor?")) {
+            $("#addr"+(id)).remove();
+            i--;
+        };
+        console.log("Despues de delete: "+i);
+    }
+    }
+
 angular.module('App', [])
+
 .controller('BuscadorCtrl', ['$scope', '$http', function ($scope, $http) {
   var j = parseInt(document.getElementById('numvalores').value);
   console.log(j);
@@ -103,6 +127,7 @@ angular.module('App', [])
 	j++;
 	console.log($scope.i);
   };
+
 
 }]);
 

@@ -1,62 +1,57 @@
-<form class="form-horizontal">
-    <div class="box-body col-xs-12">
+<form class="form-horizontal" method="POST" action="{{route('diversoCrear')}}" autocomplete="off">
+    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+    <input type="hidden" name="id" value="{{ $diverso->id }}">
+    <input type="hidden" name="paciente_id" value="{{ $paciente->id }}">
+    <input type="hidden" name="tipo_analisis" value="Diversos">
+
+    <div class="row box-body">
         <br>
-        <div class="col-xs-12">
+        <div class="col-md-12 ">
+            <div class="form-group">
+                <label for="medico" class="col-sm-3 control-label">Medico</label>
+                <div class="col-sm-7">
+                    <input type="text" name="medico" class="form-control" value="{{$diverso->medico}}"required autofocus>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
             <div class="form-group">
                <label for="muestra" class="col-sm-3 control-label">Muestra</label>
                <div class="col-sm-7">
-                   <input type="text" class="form-control" placeholder=" ">
+                   <input type="text" name="muestra" class="form-control" value="{{$diverso->muestra}}" required>
                </div>
             </div>
         </div>
-        <div class="col-xs-12">
+        <div class="col-md-12">
             <div class="form-group">
                <label for="examen" class="col-sm-3 control-label">Examen Realizado</label>
                <div class="col-sm-7">
-                   <input type="text" class="form-control" placeholder=" ">
+                   <input type="text" name="examen" class="form-control" value="{{$diverso->examen}}" required>
                </div>
             </div>
         </div>
 
         <h4 class="text-center"><b>Resultado</b></h4>
         <hr>
-
-        <div class="panel panel-default" style="margin-bottom:0px">
-            <div class="table-responsive">
-                <table class="table table-bordered" id="tab_logic">
-                  <thead>
-                      <tr> 
-                          <th class="text-center"> # </th>
-                          <th class="text-center"> Examen realizado </th>
-                          <th class="text-center"> Resultado </th>
-                          <th class="text-center"> Valores normales </th> 
-                      </tr>
-                  </thead>
-                  <tbody>
-
-                    <tr id='addr0'>
-                      <td> 1 </td>
-                      <td> <input type="text" name='examen[0]'  class="form-control"/> </td>
-                      <td> <input type="text" name='resultado[0]' class="form-control"/> </td>
-                      <td> <input type="text" name='valores[0]' class="form-control"/> </td>
-                    </tr>
-                    <tr id='addr1'></tr>
-
-                  </tbody>
-                </table>
-                <br>
-                <div class="col-xs-12">
-                    <a id='delete_row' class="btn btn-danger pull-left"><i class="fa">-</i></a>
-                    <a id="add_row" class="btn btn-primary pull-right"><i class="fa">+</i></a>
-                    <br>.
-                </div>
-            </div>
+        <div class="col-md-12">
+            @if($diverso->accion != "Editar")
+              <ul class="nav nav-pills">
+                <li role="presentation"><a href="javascript:void(0);" onClick="ninguno();">Ninguno</a></li>
+                <li role="presentation"><a href="javascript:void(0);" onClick="antijenos();">Antijenos</a></li>
+              </ul>
+            @endif
+           <textarea rows="8" id="resultado" name="resultado" class="form-control" style="white-space: normal;" required>
+             {{$diverso->resultado}}
+           </textarea>
         </div>
 
     </div>
-    .<div class="box-footer">
+    <div class="box-footer">
         <a href="{{ route('pacienteAnalisis', array($paciente->id)) }}" class="btn btn-default">Cancelar</a>
-      <button type="submit" class="btn btn-info pull-right">Guardar</button>
+        <button type="submit" class="btn btn-primary pull-right" style="margin-left:20px;">Guardar</button>
+        @if($diverso->imprimir)
+        <a href="{{ route('analisisImprimir', array('diversos', $diverso->id)) }}" target="_black" class="btn btn-info pull-right"><i class="fa fa-print"></i></a>
+        @endif
     </div>
 </form>
 
@@ -64,25 +59,17 @@
 @section('js')
 
 <script>
-  
-$(document).ready(function(){
-  var i=1;
-  $("#add_row").click(function(){
-  $('#addr'+i).html("<td>"+ (i+1) +"</td><td><input name='examen["+i+"]' type='text' class='form-control input-md'  /> </td><td><input  name='resultado["+i+"]' type='text'  class='form-control input-md'></td><td><input  name='valores["+i+"]' type='text'  class='form-control input-md'></td>");
 
-  $('#tab_logic').append('<tr id="addr'+(i+1)+'"></tr>');
-  i++; 
-  });
+  function ninguno(){
 
-  $("#delete_row").click(function(){
-  
-        if(i>1){
-            $("#addr"+(i-1)).html('');
-            i--;
-        }
-  });
+      document.getElementById('resultado').value = '';
+  };
+  function antijenos(){
 
-});
+      document.getElementById('resultado').value = 'Salmonella Typhi O: \n Salmonella Typhi H: \n Salmonella paratyphi a: \n Salmonella paratyphi b: \n Brucella Abortus - ab: \n Protus Ox19: \n';
+  }
+
+
 
 </script> 
 

@@ -17,7 +17,7 @@
     </div>
 </div>
 <div class="form-group">
-    <label for="esterasa" class="col-md-3 control-label">Esterasa</label>
+    <label for="esterasa" class="col-md-3 control-label">Esteraza</label>
     <div class="col-md-8">
         <input name="esterasa" value="{{$orina->esterasa}}" class="form-control" list="esterasa" />
     </div>

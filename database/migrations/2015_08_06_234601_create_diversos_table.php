@@ -18,8 +18,7 @@ class CreateDiversosTable extends Migration {
 
 			$table->string('muestra',250);
 			$table->string('examen',250);
-
-			$table->text('observaciones');
+			$table->text('resultado');
 
 			$table->softDeletes();
 			$table->timestamps();

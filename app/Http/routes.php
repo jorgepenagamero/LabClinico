@@ -35,22 +35,20 @@ Route::get('/', ['as' => 'dashboard', 'uses' => 'DashboardController@index']);
 // Quimica
     require(__DIR__ . '/Routes/quimica.php');
 
-Route::get('/diversos/crear', ['as' => 'diversosCrear', 'uses' => 'DiversosController@index']);
-Route::get('/diversos/editar/{id}', ['as' => 'diversosEditar', 'uses' => 'DiversosController@editar']);
+// Diversos
+    require(__DIR__ . '/Routes/diversos.php');
 
 // Imprimir
 Route::get('/analisis/imprimir/{analisis}/{id}', ['as' => 'analisisImprimir', 'uses' => 'AnalisisController@analisis']);
 
-// Otros
-Route::get('/perfil', ['as' => 'perfil', 'uses' => 'ApiController@perfil']);
-Route::post('/perfil', ['as' => 'perfil', 'uses' => 'ApiController@guardar']);
-
+// Info
 Route::get('/informacion', ['as' => 'info', 'uses' => 'ApiController@info']);
 
+// Buscar
 Route::get('examen/buscar/{txt}', 'ApiController@buscarExamen');
 Route::get('examen/buscar/valor/{id}', 'ApiController@buscarExamenValor');
+Route::get('paciente/buscar/',  'ApiController@buscarPaciente');
+Route::get('examen/buscar/',  'ApiController@buscarExamenL');
 
-Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
-]);
+// Autenticacion
+Route::controllers(['auth' => 'Auth\AuthController', 'password' => 'Auth\PasswordController', ]);

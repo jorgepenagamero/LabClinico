@@ -12,9 +12,9 @@
   </head>
   <body class="login-page">
 
-  	<div class="login-box">
+  	<div class="login-box animated fadeIn">
 	    <div class="login-logo">
-	      	<a href="#"><img src="/img/logo.svg" alt="Logo" width="200"></a>
+	      	<a href="#"><img src="/img/logo.png" alt="Logo" width="200"></a>
 	      	<hr>
 	    </div>
 	    <div class="login-box-body">
