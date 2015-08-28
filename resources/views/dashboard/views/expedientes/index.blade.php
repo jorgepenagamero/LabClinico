@@ -74,10 +74,12 @@
                     </tr>
                 </tfoot>
             </table>
+            <?php  echo $pacientes->render();?>
         </div>
 
     </div> 
 
 </div>
+
 
 @endsection

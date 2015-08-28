@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <style>
-        @page { margin: 20px 30px;}
+        @page { margin: 20px 30px; size: portrait;}
 
         p{margin: 0px; padding: 0px; font-size: 14px;}
         h4{margin: 5px 0;}

@@ -18,7 +18,7 @@ class ExpedientesController extends Controller {
 
 	public function index()
 	{
-		$pacientes = Paciente::orderBy('id','desc')->get();
+		$pacientes = Paciente::orderBy('id','desc')->paginate(10);
 		return view('dashboard.views.expedientes.index', compact('pacientes'));
 	}
 

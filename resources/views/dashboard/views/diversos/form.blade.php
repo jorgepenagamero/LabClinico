@@ -34,12 +34,15 @@
         <h4 class="text-center"><b>Resultado</b></h4>
         <hr>
         <div class="col-md-12">
-            @if($diverso->accion != "Editar")
+            {{-- @if($diverso->accion != "Editar") --}}
               <ul class="nav nav-pills">
                 <li role="presentation"><a href="javascript:void(0);" onClick="ninguno();">Ninguno</a></li>
                 <li role="presentation"><a href="javascript:void(0);" onClick="antijenos();">Antijenos</a></li>
+                <li role="presentation"><a href="javascript:void(0);" onClick="frotis();">FSP</a></li>
+                <li role="presentation"><a href="javascript:void(0);" onClick="depuracion();">Depuración</a></li>
+                <li role="presentation"><a href="javascript:void(0);" onClick="glicosilada();">Glicosilada</a></li>
               </ul>
-            @endif
+            {{-- @endif --}}
            <textarea rows="8" id="resultado" name="resultado" class="form-control" style="white-space: normal;" required>
              {{$diverso->resultado}}
            </textarea>
@@ -65,8 +68,16 @@
       document.getElementById('resultado').value = '';
   };
   function antijenos(){
-
       document.getElementById('resultado').value = 'Salmonella Typhi O: \n Salmonella Typhi H: \n Salmonella paratyphi a: \n Salmonella paratyphi b: \n Brucella Abortus - ab: \n Protus Ox19: \n';
+  }
+  function frotis(){
+      document.getElementById('resultado').value = 'Linea Roja: \n \n Linea Blanca: \n \n Linea Plaquetaria: \n';
+  }
+  function depuracion(){
+      document.getElementById('resultado').value = 'Concentración de Creatimina: \n Depuración de Creatimina: \n Volumen de Orina: \n Creatimina en Sangre: \n';
+  }
+  function glicosilada(){
+      document.getElementById('resultado').value = 'Paciente no diabetico: 4.2 - 6.2 % \n Buen Control: 5.5 - 6.8 % \n Control Regular: 6.8 - 7.6 % \n Control pobre mayor de 7.8 % \n';
   }
 
 

@@ -1,4 +1,4 @@
-<footer style="position: fixed; bottom: 40px; text-align: center">
+<footer style="position: fixed; bottom: 600px; text-align: center">
     <p>FIRMA:_______________________________</p>
-    <p><strong>CARMEN MARISOL FLORES ARIAS</strong></p>
+    <p><strong>Lic. CARMEN MARISOL FLORES ARIAS</strong></p>
 </footer>
