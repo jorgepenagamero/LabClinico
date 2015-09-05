@@ -17,7 +17,7 @@ class ExamenesController extends Controller {
 
 	public function index()
 	{
-		$examenes = Examen::orderBy('id','desc')->get();
+		$examenes = Examen::orderBy('id','desc')->paginate(10);
 		return view('dashboard.views.examenes.index', compact('examenes'));
 	}
 

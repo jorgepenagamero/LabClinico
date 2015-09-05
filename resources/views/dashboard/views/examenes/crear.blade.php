@@ -37,7 +37,14 @@
 
 @section('js')
 <script>
-  
+    $(document).keydown(function(tecla){
+    console.log(tecla);
+        if (tecla.keyCode == 119) {
+            $('.addmas').click();
+            document.getElementById('examen[' + j + ']').focus();
+        };
+    });
+
 var i = parseInt(document.getElementById('numvalores').value);
 // alert(i);
 $("#add_row").click(function(){

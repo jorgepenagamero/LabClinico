@@ -2,55 +2,39 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<style>
-	    @page { margin: 20px 30px;}
-
-	    p{margin: 0px; padding: 0px; font-size: 14px;}
-	    h4{margin: 5px 0;}
-
-	    .panel{width: 49%; display: inline-block;}
-	    .panel p {margin: 5px 0px;}
-	    table{width: 100%}
-
-	    section{margin-top: 15px; padding: 5px; border: 1px solid gray;}
-
-	</style>
-
-	<title>Examen Orina</title>
+	<link href="{{ asset('css/pdf.css') }}" rel="stylesheet">
+    <style media="print"> button{display: none;} </style>
+	<title>Examen Hemograma</title>
 </head>
-<body>
+<body onload="javascript:print();">
 
 	@include('pdf.header')
 
 	<section>
 		<div class="panel">
 			<table>
-				<tr><td style="width:200px;">GLOBULOS ROJOS X mm3</td> <td>: {{$data->globulos}}</td></tr>
-				<tr><td style="width:200px;">HEMATOCRITO %</td> <td>: {{$data->hematocritos}}</td></tr>
-				<tr><td style="width:200px;">HEMOGLOBINA gr %</td> <td>: {{$data->hemoglobina}}</td></tr>
-				<tr><td style="width:200px;">V.C.M M3</td> <td>: {{$data->volumen}}</td></tr>
-				<tr><td style="width:200px;">C.HB.G.M gr %</td> <td>: {{$data->concentracion}}</td></tr>
-				<tr><td style="width:200px;">HGB G.M. rr</td> <td>: {{$data->globular}}</td></tr>
+				<tr><td style="width:160px;">GLOBULOS R, X mm3</td> <td>: {{$data->globulos}}</td></tr>
+				<tr><td style="width:160px;">HEMATOCRITO %</td> <td>: {{$data->hematocritos}}</td></tr>
+				<tr><td style="width:160px;">HEMOGLOBINA gr %</td> <td>: {{$data->hemoglobina}}</td></tr>
+				<tr><td style="width:160px;">V.C.M M3</td> <td>: {{$data->volumen}}</td></tr>
+				<tr><td style="width:160px;">C.HB.G.M gr %</td> <td>: {{$data->concentracion}}</td></tr>
+				<tr><td style="width:160px;">HGB G.M. rr</td> <td>: {{$data->globular}}</td></tr>
 			</table>
 		</div>
 		<div class="panel">
 			<table>
-				<tr><td style="width:200px;">GLOBULOS BLANCOS X mm3</td> <td>: {{$data->blancos}}</td></tr>
-				<tr><td style="width:200px;">BASOFITOS %</td> <td>: {{$data->basofitos}}</td></tr>
-				<tr><td style="width:200px;">EOSINOFILOS %</td> <td>: {{$data->eosinofilos}}</td></tr>
-				<tr><td style="width:200px;">NEUTROFILOS %</td> <td>: {{$data->neutrofilos}}</td></tr>
-				<tr><td style="width:200px;">LINFOCITOS %</td> <td>: {{$data->liniocitos}}</td></tr>
-				<tr><td style="width:200px;">MONOCITOS %</td> <td>: {{$data->monocitos}}</td></tr>
-				<tr><td style="width:200px;">PLAQUETAS X mmS</td> <td>: {{$data->plaquetas}}</td></tr>
+				<tr><td style="width:160px;">GLOBULOS B. X mm3</td> <td>: {{$data->blancos}}</td></tr>
+				<tr><td style="width:160px;">BASOFITOS %</td> <td>: {{$data->basofitos}}</td></tr>
+				<tr><td style="width:160px;">EOSINOFILOS %</td> <td>: {{$data->eosinofilos}}</td></tr>
+				<tr><td style="width:160px;">NEUTROFILOS %</td> <td>: {{$data->neutrofilos}}</td></tr>
+				<tr><td style="width:160px;">LINFOCITOS %</td> <td>: {{$data->liniocitos}}</td></tr>
+				<tr><td style="width:160px;">MONOCITOS %</td> <td>: {{$data->monocitos}}</td></tr>
+				<tr><td style="width:160px;">PLAQUETAS X mmS</td> <td>: {{$data->plaquetas}}</td></tr>
 			</table>
-			
-		<br>
 		</div>
-			<table>
-			
-			<tr><td style="width:200px;">OBSERVACIONES: {{$data->observaciones}}</td></tr>
-			
-			</table>
+		<table>
+		<tr><td style="width:160px;"><br>OBSERVACIONES: {{$data->observaciones}}</td></tr>
+		</table>
 		
 	</section>
 	

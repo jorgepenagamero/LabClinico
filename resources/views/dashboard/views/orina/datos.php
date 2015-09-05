@@ -23,6 +23,7 @@
 </datalist>
 
 <datalist id="esterasa">
+    <option value="Negativo">
     <option value="10 - 25 leu/&micro L (&plusmn)">
     <option value="70 leu/&micro L (+)">
     <option value="125 leu/&micro L (++)">

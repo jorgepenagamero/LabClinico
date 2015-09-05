@@ -26,57 +26,13 @@
     <div class="box">
 
         <div class="box-header with-border">
-          <h3 class="box-title">{{$paciente->nombre}} - <small>{{$paciente->edad}} {{$paciente->detalle_edad}}</small></h3>
+          <h3 class="box-title"><strong>Paciente:</strong> {{$paciente->nombre}} - <small>{{$paciente->edad}} {{$paciente->detalle_edad}}</small></h3>
+          <span class="badge pull-right">{{ count($pacienteAnalisis) }} Análisis.</span>
         </div>
 
         <div class="box-body table-responsive">
         @if(count($pacienteAnalisis)<1)
-            <div class="panel panel-primary">
-              <div class="panel-heading">
-                <h3 class="panel-title text-center">Crear analisis</h3>
-              </div>
-              <div class="panel-body">
-                <a href="{{ '/orina/crear/' . $paciente->id }}" class="col-md-2 col-md-offset-1 col-sm-6">
-                    <div class="small-box bg-aqua">
-                        <div class="inner"> <h3>Orina</h3> <p>Examen</p> </div>
-                        <div class="icon"> <i class="fa fa-list"></i> </div>
-                        <p href="#" class="small-box-footer">Crear <i class="fa fa-arrow-circle-right"></i></p>
-                    </div>
-                </a>
-
-                <a href="{{ '/diversos/crear/' . $paciente->id }}" class="col-md-2 col-sm-6">
-                    <div class="small-box bg-green">
-                        <div class="inner"> <h3>Diversos</h3> <p>Examen</p> </div>
-                        <div class="icon"> <i class="fa fa-list"></i> </div>
-                        <p href="#" class="small-box-footer">Crear <i class="fa fa-arrow-circle-right"></i></p>
-                    </div>
-                </a>
-
-                <a href="{{ '/hemograma/crear/' . $paciente->id }}" class="col-md-2 col-sm-6">
-                    <div class="small-box bg-blue">
-                        <div class="inner"> <h3>Hemograma</h3> <p>Examen</p> </div>
-                        <div class="icon"> <i class="fa fa-list"></i> </div>
-                        <p href="#" class="small-box-footer">Crear <i class="fa fa-arrow-circle-right"></i></p>
-                    </div>
-                </a>
-
-                <a href="{{ '/heces/crear/' . $paciente->id }}" class="col-md-2 col-sm-6">
-                    <div class="small-box bg-red">
-                        <div class="inner"> <h3>Heces</h3> <p>Examen</p> </div>
-                        <div class="icon"> <i class="fa fa-list"></i> </div>
-                        <p href="#" class="small-box-footer">Crear <i class="fa fa-arrow-circle-right"></i></p>
-                    </div>
-                </a>
-
-                <a href="{{ '/quimica/crear/' . $paciente->id }}" class="col-md-2 col-md-6">
-                    <div class="small-box bg-yellow">
-                        <div class="inner"> <h3>Quimica</h3> <p>Examen</p> </div>
-                        <div class="icon"> <i class="fa fa-list"></i> </div>
-                        <p href="#" class="small-box-footer">Crear <i class="fa fa-arrow-circle-right"></i></p>
-                    </div>
-                </a>
-              </div>
-        </div>
+            {{-- <div class="alert alert-info">No tiene ningun análisis.</div> --}}
         @else
             <table class="table table-bordered table-hover">
                 <thead>
@@ -94,27 +50,13 @@
                         <td>{{$analisis->created_at}}</td>
                         <td class="text-center">
                         <div class="btn-group btn-group-sm">
-                            @if($analisis->analisis == 'Orina')
-                                <a href="{{ route('orinaEditar', array($analisis->id)) }}" class="btn btn-default" title="Historial">
-                                    <i class="fa fa-book"></i>
-                                </a>
-                            @elseif($analisis->analisis == 'Heces')
-                                <a href="{{ route('hecesEditar', array($analisis->id)) }}" class="btn btn-default" title="Historial">
-                                    <i class="fa fa-book"></i>
-                                </a>                        
-                            @elseif($analisis->analisis == 'Hemograma')
-                                <a href="{{ route('hemogramaEditar', array($analisis->id)) }}" class="btn btn-default" title="Historial">
-                                    <i class="fa fa-book"></i>
-                                </a>                            
-                            @elseif($analisis->analisis == 'Diversos')
-                                <a href="{{ route('diversosEditar', array($analisis->id)) }}" class="btn btn-default" title="Historial">
-                                    <i class="fa fa-book"></i>
-                                </a>                            
-                            @elseif($analisis->analisis == 'Quimica')
-                                <a href="{{ route('quimicaEditar', array($analisis->id)) }}" class="btn btn-default" title="Historial">
-                                    <i class="fa fa-book"></i>
-                                </a>
-                            @endif
+                            <a href="{{ route('analisisImprimir', array(strtolower($analisis->analisis), $analisis->analisis_id)) }}" target="_black" class="btn btn-info"><i class="fa fa-print"></i></a>
+                            
+                            <a href="{{ url(strtolower($analisis->analisis).'/editar/'. $analisis->id) }}" class="btn btn-default" title="Historial">
+                                <i class="fa fa-book"></i>
+                            </a>
+
+
                         </div>
                         </td>
                     </tr>
@@ -128,6 +70,8 @@
                 </tfoot>
             </table>
         @endif
+        <br>
+            @include('dashboard.views.expedientes.examenes')
         </div>
 
     </div> 

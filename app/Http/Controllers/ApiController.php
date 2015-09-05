@@ -47,7 +47,7 @@ class ApiController extends Controller {
 
 		$txt = $request->get('txt');
 		// return $txt;
-		$pacientes = Paciente::where('nombre', 'LIKE', '%'.$txt.'%')->orderBy('nombre','asc')->get();
+		$pacientes = Paciente::where('nombre', 'LIKE', '%'.$txt.'%')->orderBy('nombre','asc')->paginate(20);
 
 		return view('dashboard.views.expedientes.index', compact('pacientes'));
 	}
@@ -55,7 +55,7 @@ class ApiController extends Controller {
 
 		$txt = $request->get('txt');
 		
-		$examenes = Examen::where('nombre', 'LIKE', '%'.$txt.'%')->orderBy('nombre','asc')->get();
+		$examenes = Examen::where('nombre', 'LIKE', '%'.$txt.'%')->orderBy('nombre','asc')->paginate(20);
 
 		return view('dashboard.views.examenes.index', compact('examenes'));
 	}

@@ -71,6 +71,7 @@
                     </tr>
                 </tfoot>
             </table>
+            <?php  echo $examenes->render();?>
         </div>
 
     </div> 

@@ -13,8 +13,6 @@ class QuimicaTableSeeder extends Seeder {
         for($i = 1; $i <= 30 ; $i++)
         {
             $quimica = new Quimica;
-
-            // $quimica->medico = $faker->name;
             
             $quimica->save();
             

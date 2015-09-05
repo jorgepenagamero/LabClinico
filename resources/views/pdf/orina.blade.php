@@ -2,28 +2,16 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<style>
-	    @page { margin: 20px 30px;}
-
-	    p{margin: 0px; padding: 0px; font-size: 14px;}
-	    h4{margin: 5px 0;}
-
-	    #panel{width: 49%; display: inline-block;}
-	    table tr{font-size: 13px;}
-	    table{width: 100%}
-
-	    section{margin-top: 15px; padding: 5px; border: 1px solid gray;}
-		
-	</style>
-
+	<link href="{{ asset('css/pdf.css') }}" rel="stylesheet">
+    <style media="print"> button{display: none;} </style>
 	<title>Examen Orina</title>
 </head>
-<body>
+<body onload="javascript:print();">
 		
 	@include('pdf.header')
 
 	<section>
-		<div id="panel">
+		<div class="panel">
 			<h4>EXAMEN FISICO</h4>
 			<table>
 				<tr><td style="width:100px;">COLOR</td> <td>: {{$data->color}}<td></tr>
@@ -42,7 +30,7 @@
 				<tr><td style="width:100px;">CELULAS</td><td>: {{$data->celulas}}</td></tr>
 			</table>
 		</div>
-		<div id="panel">
+		<div class="panel">
 			<h4>EXAMEN QUIMICO</h4>
 			<table>
 				<tr><td style="width:100px;">ESTERAS LEUC.</td><td>: {{$data->esterasa}}</td></tr>
@@ -56,7 +44,7 @@
 				<tr><td style="width:100px;">BACTERIAS</td><td>: {{$data->bacterias}}</td></tr>
 				<tr><td style="width:100px;">OTROS</td><td>: {{$data->otros}}</td></tr>
 			</table>
-		</div>		
+		</div>
 	</section>
 	
 	@include('pdf.footer')

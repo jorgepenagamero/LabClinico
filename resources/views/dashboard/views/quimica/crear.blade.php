@@ -77,9 +77,17 @@ angular.module('App', [])
   $scope.valor = [];
   $scope.txt = [];
 
+    $(document).keydown(function(tecla){
+    // console.log(tecla);
+        if (tecla.keyCode == 119) {
+            $('.addmas').click();
+            document.getElementById('examen[' + j + ']').focus();
+        };
+    });
+
   $scope.buscar = function(txt, id){
 	if(txt != ""){
-	  $http.get('http://sistema/examen/buscar/' + txt).success(function(response) {
+	  $http.get('http://localhost/examen/buscar/' + txt).success(function(response) {
 		$scope.examenes[id] = response;
 	  })
 	  .error(function(response){
@@ -94,17 +102,18 @@ angular.module('App', [])
   };
 
   $scope.select = function(examen,id){
-	  $http.get('http://sistema/examen/buscar/valor/' + examen.id) .success(function(response) {
+	  $http.get('http://localhost/examen/buscar/valor/' + examen.id) .success(function(response) {
 		if(response.length > 0){
 		  $scope.lvalores[id] = response;
 		  $scope.valor[id] = response[0].valor;
 		  $scope.txt[id] = examen.nombre;
 		  $scope.examenes[id] = [];
-		}
-		else{
-		  $scope.valor[id] = "Sin Valores";
-		  $scope.txt[id] = examen.nombre;
-		  $scope.examenes[id] = [];
+          document.getElementById('resultado[' + j + ']').focus();
+        }
+        else{
+          $scope.valor[id] = "Sin Valores";
+          $scope.txt[id] = examen.nombre;
+          $scope.examenes[id] = [];
 		}
 	  })
 	  .error(function(response){

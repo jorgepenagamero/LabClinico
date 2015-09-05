@@ -37,10 +37,10 @@
 				<tr>
 					<td></td><td></td><td></td><td></td>
 					<td class="text-center">
-						@if($paciente->accion == "Editar")
-						<a onclick="agregar();" class="btn btn-primary"><i class="fa fa-plus"></i></a>
+						@if($quimica->accion == "Editar")
+						<button onclick="agregar();" class="btn btn-primary addmas"><i class="fa fa-plus"></i></button>
 						@else
-						<a ng-click="add(1);" class="btn btn-primary"><i class="fa fa-plus"></i></a>
+						<button ng-click="add(1);" class="btn btn-primary addmas"><i class="fa fa-plus"></i></button>
 						@endif
 					</td>
 				</tr>
@@ -50,7 +50,7 @@
 
 	<br>
 	<div class="box-footer">
-		<a href="{{ route('pacienteAnalisis', array($paciente->id)) }}" class="btn btn-default">Cancelar</a>
+		<a href="{{ route('pacienteAnalisis', array($paciente->id)) }}" class="btn btn-default">Expediente</a>
 		<button type="submit" class="btn btn-primary pull-right" style="margin-left:20px;">Guardar</button>
 		@if($quimica->imprimir)
 		<a href="{{ route('analisisImprimir', array('quimica', $quimica->id)) }}" target="_black" class="btn btn-info pull-right"><i class="fa fa-print"></i></a>

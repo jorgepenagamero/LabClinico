@@ -1,36 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="{{ asset('css/pdf.css') }}" rel="stylesheet">
     <style>
-        @page { margin: 20px 30px; size: portrait;}
-
-        p{margin: 0px; padding: 0px; font-size: 14px;}
-        h4{margin: 5px 0;}
-
-        .panel{width: 100%; padding: 10px;}
-        .panel p {margin: 5px 0px;}
-        section{margin-top: 15px; padding: 5px; border: 1px solid gray;}
-        h3{text-align: center;}
-        textarea{height: auto; white-space: pre-line; border: none;}
+        h3{text-align: center; margin: 0;}
+        textarea{width: 100%; height: 110px;border: none; white-space: pre-line; resize:none; font-size: 1.2em;}
 
     </style>
+    <style media="print"> button{display: none;} </style>
 
     <title>Examen Diverso</title>
 </head>
-<body>
+<body onload="javascript:print();">
 
     @include('pdf.header')
 
-    <section>
-        <div class="panel">
-
-            <p>MUESTRA: {{$data->muestra}}</p>
-            <p>EXAMEN REALIZADO:  {{$data->examen}}</p>
-            <h3>RESULTADO</h3>
-            <textarea>{{$data->resultado}}</textarea>
-
-        </div>
+    <section style="padding:10px 20px 0 20px;">
+        <p>MUESTRA: {{$data->muestra}}</p>
+        <p>EXAMEN REALIZADO:  {{$data->examen}}</p>
+        <h3>RESULTADO</h3>
+        <textarea readonly>{{$data->resultado}}</textarea>
     </section>
 
     @include('pdf.footer')

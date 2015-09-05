@@ -1,4 +1,6 @@
-<footer style="position: fixed; bottom: 600px; text-align: center">
-    <p>FIRMA:_______________________________</p>
-    <p><strong>Lic. CARMEN MARISOL FLORES ARIAS</strong></p>
+﻿<footer>
+    <p>F.:_______________________________</p>
+    <p style="margin-top:2px;"><strong>Lic. CARMEN MARISOL FLORES ARIAS</strong> J.V.P.L.C° 2172</p>
 </footer>
+
+<button id="p" onClick="javascrip:print();" autofocus>Imprimir</button>

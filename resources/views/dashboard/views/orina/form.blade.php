@@ -35,7 +35,7 @@
         </div>
     </div>
     <div class="box-footer">
-        <a href="{{ route('pacienteAnalisis', array($paciente->id)) }}" class="btn btn-default">Cancelar</a>
+        <a href="{{ route('pacienteAnalisis', array($paciente->id)) }}" class="btn btn-default">Expediente</a>
         <button type="submit" class="btn btn-primary pull-right" style="margin-left:20px;">Guardar</button>
         @if($orina->imprimir)
         <a href="{{ route('analisisImprimir', array('orina', $orina->id)) }}" target="_black" class="btn btn-info pull-right"><i class="fa fa-print"></i></a>

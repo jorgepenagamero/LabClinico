@@ -2,29 +2,19 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<link href="{{ asset('css/pdf.css') }}" rel="stylesheet">
 	<style>
-	    @page { margin: 20px 30px;}
-
-	    p{margin: 0px; padding: 0px; font-size: 14px;}
-	    h4{margin: 5px 0;}
-
-	    .panel{width: 49%; display: inline-block;}
-	    .panel p {margin: 5px 0px;}
-	    table{width: 100%;}
 	    table th{border-bottom: 1px solid gray;}
-		.fila{width: 240px; text-align: center;}
-	    section{margin-top: 15px; padding: 5px; border: 1px solid gray;}
-		
+		.fila{width: 240px; text-align: center; font-size:1.1em;}		
 	</style>
-
+    <style media="print"> button{display: none;} </style>
 	<title>Examen Quimica</title>
 </head>
-<body>
+<body onload="javascript:print();">
 
 	@include('pdf.header')
 
 	<section>
-		<div class="panel">
 		<table>
 			<tr>
 				<th class="fila">Examen Realizado</th>
@@ -39,7 +29,6 @@
 			</tr>
 		@endforeach
 		</table>
-		</div>
 	</section>
 
 	@include('pdf.footer')

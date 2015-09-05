@@ -47,7 +47,7 @@
         <tfooter>
           <tr>
             <td></td>
-            <td><a id="add_row" class="btn btn-primary pull-right"><i class="fa fa-plus"></i></a></td></tr>
+            <td><button id="add_row" class="btn btn-primary pull-right addmas"><i class="fa fa-plus"></i></button></td></tr>
         </tfooter>
     </table>        
     <br><br>

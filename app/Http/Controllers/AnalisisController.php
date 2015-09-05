@@ -56,10 +56,10 @@ class AnalisisController extends Controller {
         }
 
         // $pdf = \PDF::loadView('pdf.' . $analisis, compact('titulo', 'data', 'paciente'))->setPaper([0,0,612,396]);
- 		$pdf = \PDF::loadView('pdf.' . $analisis, compact('titulo', 'data', 'paciente'));
- 		return $pdf->stream();
+ 		// $pdf = \PDF::loadView('pdf.' . $analisis, compact('titulo', 'data', 'paciente'));
+ 		// return $pdf->stream();
 
-        // return view('pdf.'.$analisis, compact('titulo', 'data', 'paciente'));
+        return view('pdf.'.$analisis, compact('titulo', 'data', 'paciente'));
 
     }
 

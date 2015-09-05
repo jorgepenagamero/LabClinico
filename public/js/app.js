@@ -29,6 +29,14 @@ if (typeof jQuery === "undefined") {
  */
 $.AdminLTE = {};
 
+// $(document).keydown(function(tecla){
+//     console.log(tecla);
+  
+//     if (tecla.keyCode == 120) {
+//       console.log('si');
+//         $('.btn-info').click();
+//     };
+// });
 /* --------------------
  * - AdminLTE Options -
  * --------------------

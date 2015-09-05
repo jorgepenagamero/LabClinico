@@ -1,7 +1,7 @@
 <tr ng-repeat="f in i track by $index" id="@{{'addr' +f}}">
 	<td class="text-center"> @{{ f + 1}} </td>
 	<td> 
-		<input type="text" name="@{{'examen[' + f + ']'}}" ng-model="txt[f]" ng-change="buscar(txt[f], f);" class="form-control"/> 
+		<input type="text" name="@{{'examen[' + f + ']'}}" id="@{{'examen[' + f + ']'}}" ng-model="txt[f]" ng-change="buscar(txt[f], f);" class="form-control"/> 
 		
 		<div class="list-group" style="position:absolute;">
 			<a href="" class="list-group-item" ng-repeat="examen in examenes[f]" ng-click="select(examen, f)"> 
@@ -14,7 +14,7 @@
 	</td>
 
 	<td> 
-		<input type="text" name="@{{'resultado[' + f + ']'}}" class="form-control" required/> 
+		<input type="text" name="@{{'resultado[' + f + ']'}}" id="@{{'resultado[' + f + ']'}}" class="form-control" required/> 
 	</td>
 
 	<td>
