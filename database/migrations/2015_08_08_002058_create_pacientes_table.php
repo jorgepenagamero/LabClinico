@@ -16,9 +16,9 @@ class CreatePacientesTable extends Migration {
 		{
 			$table->increments('id');
 
-			$table->string('nombre', 150);
-			$table->integer('edad');
-			$table->string('detalle_edad',25);
+			$table->string('nombre', 150)->nullable();;
+			$table->integer('edad')->nullable();;
+			$table->string('detalle_edad',25)->nullable();;
 
 			$table->softDeletes();
 			$table->timestamps();

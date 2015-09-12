@@ -34,7 +34,7 @@ class ExpedientesController extends Controller {
 	
 	public function guardar(Request $request){
 
-		$this->validate($request, ['nombre' => 'required|max:150', 'edad' => 'required|numeric']);
+		$this->validate($request, ['nombre' => 'required|max:150', 'edad' => 'numeric']);
 		
 		// Paciente nuevo
 		if ($request->analisis != "" && $request->analisis_id){

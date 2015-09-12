@@ -10,7 +10,7 @@
             <div class="form-group">
                 <label for="medico" class="col-sm-3 control-label">Medico</label>
                 <div class="col-sm-7">
-                    <input type="text" name="medico" class="form-control" value="{{$diverso->medico}}"required autofocus>
+                    <input type="text" name="medico" class="form-control" value="{{$diverso->medico}}" autofocus>
                 </div>
             </div>
         </div>
@@ -53,7 +53,7 @@
         <a href="{{ route('pacienteAnalisis', array($paciente->id)) }}" class="btn btn-default">Expediente</a>
         <button type="submit" class="btn btn-primary pull-right" style="margin-left:20px;">Guardar</button>
         @if($diverso->imprimir)
-        <a href="{{ route('analisisImprimir', array('diversos', $diverso->id)) }}" target="_black" class="btn btn-info pull-right"><i class="fa fa-print"></i></a>
+        <button onClick="imprimir('{{ route('analisisImprimir', array('diversos', $diverso->id)) }}')" target="_black" class="btn btn-info pull-right imprimir"><i class="fa fa-print"></i></button>
         @endif
     </div>
 </form>
@@ -79,8 +79,6 @@
   function glicosilada(){
       document.getElementById('resultado').value = 'Paciente no diabetico: 4.2 - 6.2 % \n Buen Control: 5.5 - 6.8 % \n Control Regular: 6.8 - 7.6 % \n Control pobre mayor de 7.8 % \n';
   }
-
-
 
 </script> 
 

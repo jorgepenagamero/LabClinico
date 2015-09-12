@@ -1,4 +1,4 @@
-
+/*
 @font-face{
     font-family:'Imprimir';
     src: url('../fonts/HIGHSPEE.ttf') format('truetype');
@@ -6,20 +6,19 @@
 @font-face{
     font-family:'Dot';
     src: url('../fonts/Dotmatrx.ttf') format('truetype');
-}
+}*/
 
 p{margin: 0px; padding: 0px; font-size: 1em;}
 h4{margin: 0;}
-footer{ margin-top: 0px; text-align: center; font-size: .9em}
+footer{ margin-top: -5px; text-align: center; font-size: .9em}
 table{width: 100%;}
 table td{font-size: 1em; padding: 0px; }
 body {
     margin: -5px 50px 0 20px;
-    /*font-family: "Imprimir";*/
     font-family: Verdana;
     font-size: 9px;
     letter-spacing: .5px;
 }
 
-section{padding: 0px 5px 0px 5px; border: 1px solid gray; height: 166px;}
+section{padding: 0px 5px 0px 5px; border: 1px solid gray; height: 160px;}
 .panel{width: 49%; float: left;}

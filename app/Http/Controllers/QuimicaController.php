@@ -36,8 +36,6 @@ class QuimicaController extends Controller {
 
     public function guardar(Request $request){
 
-        // dd($request);
-
         if ($request->id == "") {
             // return "Nuevo";
             $quimica = new Quimica;
@@ -48,7 +46,7 @@ class QuimicaController extends Controller {
             $this->elimarValores($quimica->id);
         }
 
-        $this->validate($request, ['paciente_id' => 'required|numeric', 'medico' => 'required|max:150', 
+        $this->validate($request, ['paciente_id' => 'required|numeric', 'medico' => 'max:150', 
                                     'tipo_analisis' => 'required|max:150']);
 
         // Guardar examen
@@ -63,9 +61,14 @@ class QuimicaController extends Controller {
 
         // Guardar resultados del paciente
         foreach ($request->resultado as $key => $value) {
+            $txt = "";
             $quimicaResultado = new QuimicaResultado;
             $quimicaResultado->resultado = $request->resultado[$key];
-            $quimicaResultado->valor = $request->valor[$key];
+            $txt = str_replace('{"text":"',' ',$request->valor[$key]);
+            $txt = str_replace('"}','',$txt);
+            $txt = str_replace(']','',$txt);
+            $txt = str_replace('[','',$txt);
+            $quimicaResultado->valor = $txt;
             $quimicaResultado->examen = $request->examen[$key];
             $quimicaResultado->quimica_id = $quimica->id;
             $quimicaResultado->save();

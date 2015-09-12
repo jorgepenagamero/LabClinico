@@ -16,21 +16,21 @@ class CreateHecesTable extends Migration {
 		{
 			$table->increments('id');
 
-			$table->string('color', 100);
-			$table->string('consistencia', 100);
-			$table->string('sangre', 100);
-			$table->string('restos', 100);
-			$table->string('entrocitos', 100);
-			$table->string('levadura', 100);
-			$table->string('mucus', 100);
-			$table->string('leucositos', 100);
-			$table->string('flora', 100);
-			$table->string('protozoarios', 100);
-			$table->string('quistes', 100);
-			$table->string('larvas', 100);
-			$table->string('metazueros', 100);
+			$table->string('color', 100)->nullable();;
+			$table->string('consistencia', 100)->nullable();;
+			$table->string('sangre', 100)->nullable();;
+			$table->string('restos', 100)->nullable();;
+			$table->string('entrocitos', 100)->nullable();;
+			$table->string('levadura', 100)->nullable();;
+			$table->string('mucus', 100)->nullable();;
+			$table->string('leucositos', 100)->nullable();;
+			$table->string('flora', 100)->nullable();;
+			$table->string('protozoarios', 100)->nullable();;
+			$table->string('quistes', 100)->nullable();;
+			$table->string('larvas', 100)->nullable();;
+			$table->string('metazueros', 100)->nullable();;
 
-			$table->text('observaciones');
+			$table->text('observaciones')->nullable();;
 
 			$table->softDeletes();
 			$table->timestamps();

@@ -38,7 +38,7 @@ class ApiController extends Controller {
 
 	public function buscarExamenValor($id){
 
-		$valores = ExamenValor::where('examen_id', $id)->get();
+		$valores = ExamenValor::where('examen_id', $id)->lists('valor');
 
 		return (new Response($valores,200))->header('Content-Type', 'application/json');
 	}

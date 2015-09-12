@@ -29,14 +29,20 @@ if (typeof jQuery === "undefined") {
  */
 $.AdminLTE = {};
 
-// $(document).keydown(function(tecla){
-//     console.log(tecla);
+$(document).keydown(function(tecla){
+    // console.log(tecla);
   
-//     if (tecla.keyCode == 120) {
-//       console.log('si');
-//         $('.btn-info').click();
-//     };
-// });
+    if (tecla.keyCode == 120) {
+      // console.log('si');
+        $('.imprimir').click();
+    };
+});
+
+
+function imprimir(url) {
+  var ventana = window.open(url, "_new", "toolbar=yes, scrollbars=yes, resizable=yes, left=100, width=900, height=900");
+}
+
 /* --------------------
  * - AdminLTE Options -
  * --------------------

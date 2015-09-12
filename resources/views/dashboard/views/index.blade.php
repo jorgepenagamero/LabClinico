@@ -125,7 +125,7 @@
                         <td>{{$analisis->created_at}}</td>
                         <td class="text-center">
                         <div class="btn-group btn-group-sm">
-                            <a href="{{ route('analisisImprimir', array(strtolower($analisis->analisis),$analisis->analisis_id)) }}" target="_black" class="btn btn-info"><i class="fa fa-print"></i></a>
+                            <button onClick="imprimir('{{ route('analisisImprimir', array(strtolower($analisis->analisis),$analisis->analisis_id)) }}')" target="_black" class="btn btn-info"><i class="fa fa-print"></i></button>
                             <a href="{{route( strtolower($analisis->analisis).'Editar', $analisis->id)}}" class="btn btn-default" title="Historial">
                                 <i class="fa fa-book"></i>
                             </a>

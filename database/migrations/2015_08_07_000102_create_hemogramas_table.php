@@ -16,20 +16,20 @@ class CreateHemogramasTable extends Migration {
 		{
 			$table->increments('id');
 
-			$table->double('globulos', 7, 4);
-			$table->double('hematocritos', 7, 4);
-			$table->double('hemoglobina', 7, 4);
-			$table->double('volumen', 7, 4);
-			$table->double('concentracion', 7, 4);
+			$table->string('globulos', 100)->nullable();
+			$table->string('hematocritos', 100)->nullable();
+			$table->string('hemoglobina', 100)->nullable();
+			$table->string('volumen', 100)->nullable();
+			$table->string('concentracion', 100)->nullable();
 			
-			$table->double('globular', 7, 4);
-			$table->double('blancos', 7, 4);
-			$table->double('basofitos', 7, 4);
-			$table->double('eosinofilos', 7, 4);
-			$table->double('neutrofilos', 7, 4);
-			$table->double('liniocitos', 7, 4);
-			$table->double('monocitos', 7, 4);
-			$table->double('plaquetas', 7, 4);
+			$table->string('globular', 100)->nullable();
+			$table->string('blancos', 100)->nullable();
+			$table->string('basofitos', 100)->nullable();
+			$table->string('eosinofilos', 100)->nullable();
+			$table->string('neutrofilos', 100)->nullable();
+			$table->string('liniocitos', 100)->nullable();
+			$table->string('monocitos', 100)->nullable();
+			$table->string('plaquetas', 100)->nullable();
 
 			$table->text('observaciones');
 

@@ -5,7 +5,7 @@
     <link href="{{ asset('css/pdf.css') }}" rel="stylesheet">
     <style>
         h3{text-align: center; margin: 0;}
-        textarea{width: 100%; height: 110px;border: none; white-space: pre-line; resize:none; font-size: 1.2em;}
+        textarea{width: 100%; height: 110px;border: none; white-space: pre-line; resize:none; font-size: 1.2em; overflow: hidden;}
 
     </style>
     <style media="print"> button{display: none;} </style>

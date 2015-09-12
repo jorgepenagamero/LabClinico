@@ -16,9 +16,9 @@ class CreateDiversosTable extends Migration {
 		{
 			$table->increments('id');
 
-			$table->string('muestra',250);
-			$table->string('examen',250);
-			$table->text('resultado');
+			$table->string('muestra',250)->nullable();;
+			$table->string('examen',250)->nullable();;
+			$table->text('resultado')->nullable();;
 
 			$table->softDeletes();
 			$table->timestamps();

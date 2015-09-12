@@ -17,7 +17,7 @@ class CreatePacienteAnalisisTable extends Migration {
 			$table->increments('id');
 
 			$table->integer('paciente_id');
-			$table->string('medico');
+			$table->string('medico')->nullable();;
 			$table->enum('analisis', array('Orina','Heces','Hemograma','Diversos','Quimica'));
 			$table->integer('analisis_id');
 

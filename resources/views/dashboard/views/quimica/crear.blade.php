@@ -66,7 +66,7 @@
     }
     }
 
-angular.module('App', [])
+angular.module('App', ['ngTagsInput'])
 
 .controller('BuscadorCtrl', ['$scope', '$http', function ($scope, $http) {
   var j = parseInt(document.getElementById('numvalores').value);
@@ -87,7 +87,7 @@ angular.module('App', [])
 
   $scope.buscar = function(txt, id){
 	if(txt != ""){
-	  $http.get('http://localhost/examen/buscar/' + txt).success(function(response) {
+	  $http.get('http://localhost:8000/examen/buscar/' + txt).success(function(response) {
 		$scope.examenes[id] = response;
 	  })
 	  .error(function(response){
@@ -102,10 +102,9 @@ angular.module('App', [])
   };
 
   $scope.select = function(examen,id){
-	  $http.get('http://localhost/examen/buscar/valor/' + examen.id) .success(function(response) {
+	  $http.get('http://localhost:8000/examen/buscar/valor/' + examen.id) .success(function(response) {
 		if(response.length > 0){
 		  $scope.lvalores[id] = response;
-		  $scope.valor[id] = response[0].valor;
 		  $scope.txt[id] = examen.nombre;
 		  $scope.examenes[id] = [];
           document.getElementById('resultado[' + j + ']').focus();

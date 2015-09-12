@@ -13,13 +13,13 @@
 <div class="form-group">
     <label for="protozoarios" class="col-sm-4 control-label">Protozoarios activos</label>
     <div class="col-sm-6">
-        <input name="protozoarios" value="{{$heces->protozoarios}}" class="form-control" list="protozoarios" />            
+        <input name="protozoarios" value="{{$heces->protozoarios}}" class="form-control" list="protozoarios" />
     </div>
 </div>
 <div class="form-group">
     <label for="quistes" class="col-sm-4 control-label">Quistes</label>
     <div class="col-sm-6">
-        <input name="quistes" value="{{$heces->quistes}}" class="form-control" list="quistes" />            
+        <input name="quistes" multiple value="{{$heces->quistes}}" class="form-control" list="quistes" />        
     </div>
 </div>
 <div class="form-group">

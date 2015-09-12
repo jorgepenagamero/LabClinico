@@ -4,8 +4,11 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<link href="{{ asset('css/pdf.css') }}" rel="stylesheet">
 	<style>
-	    table th{border-bottom: 1px solid gray;}
-		.fila{width: 240px; text-align: center; font-size:1.1em;}		
+	    table th{border-bottom: 1px solid black;}
+		.fila{width: 240px; text-align: center; font-size:1.1em; }
+		.line{position: fixed; border-left: 1px solid gray; height: 160px; width: 1px; }
+		.uno{left: 253px; }
+		.dos{right: 128px; }
 	</style>
     <style media="print"> button{display: none;} </style>
 	<title>Examen Quimica</title>
@@ -14,7 +17,7 @@
 
 	@include('pdf.header')
 
-	<section>
+	<section style="padding:0px">
 		<table>
 			<tr>
 				<th class="fila">Examen Realizado</th>
@@ -23,9 +26,22 @@
 			</tr>
 		@foreach($data as $d)
 			<tr>
-				<td class="fila">{{$d->examen}}</td>
-				<td class="fila">{{$d->resultado}}</td>
-				<td class="fila">{{$d->valor}}</td>
+				<td style="border-bottom: 1px solid gray;"class="fila">{{$d->examen}}</td>
+				<span class="line uno"></span>
+				<td style="border-bottom: 1px solid gray;"class="fila">{{$d->resultado}}</td>
+				<span class="line dos"></span>
+				{{-- <td style="border-bottom: 1px solid gray;"class="fila">{{$d->valor}}</td> --}}
+				<td style="border-bottom: 1px solid gray;"class="fila">
+					<?php 
+						$i = explode(',', $d->valor);
+
+						foreach ($i as $value) {
+							echo $value;
+							echo "<br>";
+						}
+					 ?>
+
+				</td>
 			</tr>
 		@endforeach
 		</table>

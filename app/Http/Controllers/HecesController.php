@@ -44,7 +44,7 @@ class HecesController extends Controller {
 			$pacienteAnalisis = PacienteAnalisis::where('analisis', 'Heces')->where('analisis_id', $request->id)->first();
 		}
 
-		$this->validate($request, ['paciente_id' => 'required|numeric', 'medico' => 'required|max:150', 
+		$this->validate($request, ['paciente_id' => 'required|numeric', 'medico' => 'max:150', 
 									'tipo_analisis' => 'required|max:150']);
 
 		$heces->color = $request->color;

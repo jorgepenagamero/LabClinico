@@ -17,7 +17,7 @@
     </div>
 </div>
 <div class="form-group">
-    <label for="urobitmogeno" class="col-md-4 control-label">Urobitmogeno</label>
+    <label for="urobitmogeno" class="col-md-4 control-label">Urobilinogeno</label>
     <div class="col-md-7">
         <input name="urobitmogeno" value="{{$orina->urobitmogeno}}" class="form-control" list="urobitmogeno" />
     </div>

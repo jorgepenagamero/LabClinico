@@ -1,4 +1,5 @@
 <tr ng-repeat="f in i track by $index" id="@{{'addr' +f}}">
+	
 	<td class="text-center"> @{{ f + 1}} </td>
 	<td> 
 		<input type="text" name="@{{'examen[' + f + ']'}}" id="@{{'examen[' + f + ']'}}" ng-model="txt[f]" ng-change="buscar(txt[f], f);" class="form-control"/> 
@@ -18,11 +19,8 @@
 	</td>
 
 	<td>
-		<input type="text" name="@{{'valor[' + f + ']'}}" ng-model="valor[f]" list="@{{'valores' + f}}" class="form-control" required/>
-		
-		<datalist id="@{{'valores' + f}}">
-			<option ng-repeat="valor in lvalores[f]" value="@{{valor.valor}}"/>
-		</datalist>
+		<input type="hidden" name="@{{'valor[' + f + ']'}}" value="@{{lvalores[f]}}"/>
+		<tags-input ng-model="lvalores[f]" class="form-control"></tags-input>		
 	</td>
 	<td style="width:50px;">
 		<a ng-show="f>0" ng-click="delete(f);" class="btn btn-danger"><i class="fa fa-minus"></i></a>

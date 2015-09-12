@@ -142,9 +142,9 @@ class ExamenValoresTableSeeder extends Seeder {
         ExamenValor::create(array( 'examen_id' => '78', 'valor' => '1ª  Semana 5 – 50 mIU /mL'));
         ExamenValor::create(array( 'examen_id' => '78', 'valor' => '10ª  Semana  100,000 – 200,000  mIU /mL'));
         ExamenValor::create(array( 'examen_id' => '79', 'valor' => 'Menor de 125 pg /mL'));
-        ExamenValor::create(array( 'examen_id' => '80', 'valor' => 'Hb,A2-  0.00 – 3.50'));
-        ExamenValor::create(array( 'examen_id' => '80', 'valor' => 'Hb,F - 0.00 – 1.00'));
-        ExamenValor::create(array( 'examen_id' => '80', 'valor' => 'Hb,A – 96.00  - 99.0'));
+        ExamenValor::create(array( 'examen_id' => '80', 'valor' => 'Hb A2-  0.00 – 3.50'));
+        ExamenValor::create(array( 'examen_id' => '80', 'valor' => 'Hb F - 0.00 – 1.00'));
+        ExamenValor::create(array( 'examen_id' => '80', 'valor' => 'Hb A – 96.00  - 99.0'));
     }
      
 }

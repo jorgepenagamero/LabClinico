@@ -30,28 +30,23 @@ class AnalisisController extends Controller {
         switch ($analisis) {
             case 'orina':
                 $data = Orina::find($id);
-                $titulo = "General de Orina";
                 break;
             
             case 'hemograma':
                 $data = Hemograma::find($id);
-                $titulo = "Hemograma";
                 break;
 
             case 'heces':
                 $data = Heces::find($id);
-                $titulo = "General de Heces";
                 break;
 
             case 'quimica':
                 $data = QuimicaResultado::where('quimica_id', $id)->get();
                 $data->created_at = Quimica::find($id)->created_at;
-                $titulo = "Química";
                 break;
 
             case 'diversos':
                 $data = Diverso::find($id);
-                $titulo = "Varios";
                 break;
         }
 
@@ -59,7 +54,7 @@ class AnalisisController extends Controller {
  		// $pdf = \PDF::loadView('pdf.' . $analisis, compact('titulo', 'data', 'paciente'));
  		// return $pdf->stream();
 
-        return view('pdf.'.$analisis, compact('titulo', 'data', 'paciente'));
+        return view('pdf.'.$analisis, compact('analisis', 'data', 'paciente'));
 
     }
 

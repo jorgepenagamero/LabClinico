@@ -11,6 +11,7 @@
 	@include('pdf.header')
 
 	<section>
+		
 		<div class="panel">
 			<h4>EXAMEN FISICO</h4>
 			<table>
