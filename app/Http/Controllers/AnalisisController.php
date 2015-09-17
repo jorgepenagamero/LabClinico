@@ -43,6 +43,7 @@ class AnalisisController extends Controller {
             case 'quimica':
                 $data = QuimicaResultado::where('quimica_id', $id)->get();
                 $data->created_at = Quimica::find($id)->created_at;
+                $data->observaciones = Quimica::find($id)->observaciones;
                 break;
 
             case 'diversos':

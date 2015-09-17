@@ -38,8 +38,8 @@
 				<tr><td style="width:100px;">ACTIVOS</td><td>: {{$data->protozoarios}}</td></tr>
 				<tr><td style="width:100px;">QUISTES</td><td>: {{$data->quistes}}</td></tr>
 				<tr><td style="width:100px;"><br>METAZOARIOS</td><td></td></tr>
-				<tr><td style="width:100px;">LARVAS</td><td><br>: {{$data->metazueros}}</td></tr>
-				<tr><td style="width:100px;">HUEVOS</td><td>: {{$data->larvas}}</td></tr>
+				<tr><td style="width:100px;">LARVAS</td><td>: {{$data->larvas}}</td></tr>
+				<tr><td style="width:100px;">HUEVOS</td><td>: {{$data->metazueros}}</td></tr>
 				<tr><td><br><br>OBSERVACIONES</td><td><br><br>: {{$data->observaciones}}</td></tr>
 			</table>
 		</div>	

@@ -1,6 +1,6 @@
 ﻿<header style="width: 100%;">
 	
-	{{-- <img src="/img/logo.png" alt="" style="width: 75px; float:left; margin-right:10px;"> --}}
+	{{-- <img src="/img/logo.png" alt="" style="width: 35px; float:left; margin-right:10px;"> --}}
 	<div style="height:50px; border-bottom: 1px solid gray; padding-bottom: -5px;">
 		
 	<div style="position: absolute; display: inline-block; margin: 0px; font-size: 1em;">
@@ -28,6 +28,6 @@
 		</p>
 		<p style="display: inline;">FECHA: {{ date("d-m-Y",strtotime($data->created_at))}}</p>
 		<br>
-		<p style="display: inline;">MÉDICO: {{$paciente->medico}}</p>
+		<p style="display: inline;">MÉDICO: {{ strtoupper($paciente->medico)}}</p>
 	</div>
 </header>

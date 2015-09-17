@@ -21,14 +21,14 @@
         <div class="col-md-6 ">
             @include('dashboard.views.heces.panel_b')
         </div>
-        <div class="col-md-12">
+{{--         <div class="col-md-12">
             <div class="form-group">
                 <label for="observaciones" class="col-md-4 control-label">Observaciones</label>
                 <div class="col-md-5">
                     <input type="text" class="form-control" name="observaciones" value="{{$heces->observaciones}}">
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
     <div class="box-footer">
         <a href="{{ route('pacienteAnalisis', array($paciente->id)) }}" class="btn btn-default">Expediente</a>

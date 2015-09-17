@@ -43,6 +43,11 @@ function imprimir(url) {
   var ventana = window.open(url, "_new", "toolbar=yes, scrollbars=yes, resizable=yes, left=100, width=900, height=900");
 }
 
+$(".tags").select2({
+  tags: true,
+  tokenSeparators: [',']
+});
+
 /* --------------------
  * - AdminLTE Options -
  * --------------------

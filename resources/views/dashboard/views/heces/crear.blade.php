@@ -37,4 +37,41 @@
 
 </section>
 
+
+@section('js')
+
+<script>
+  var $qEventSelect = $(".quistes-tags");
+  
+  var $AEventSelect = $(".activos-tags");
+
+  $qEventSelect.on("select2:select", function (e) {
+    if ($(".quistes").val() == "") {
+      $(".quistes").val($(".quistes").val() + e.params.data.id);
+    }else{
+      $(".quistes").val($(".quistes").val() + ", " + e.params.data.id);
+    };
+
+  });
+  $qEventSelect.on("select2:unselect", function (e) { 
+    $(".quistes").val($(".quistes").val().replace( ', ' + e.params.data.id, ''));
+    $(".quistes").val($(".quistes").val().replace(e.params.data.id, ''));
+  });
+
+  $AEventSelect.on("select2:select", function (e) { 
+    if ($(".activos").val() == "") {
+      $(".activos").val($(".activos").val() + e.params.data.id);
+    }else{
+      $(".activos").val($(".activos").val() + ", " + e.params.data.id);
+    };
+  });
+  $AEventSelect.on("select2:unselect", function (e) { 
+    $(".activos").val($(".activos").val().replace( ', ' + e.params.data.id, ''));
+    $(".activos").val($(".activos").val().replace(e.params.data.id, ''));
+  });
+
+</script>
+
+@endsection
+
 @endsection

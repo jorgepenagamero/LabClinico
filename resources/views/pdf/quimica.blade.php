@@ -45,6 +45,7 @@
 			</tr>
 		@endforeach
 		</table>
+		<p>{{$data->observaciones}} jojo</p>
 	</section>
 
 	@include('pdf.footer')

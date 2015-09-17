@@ -50,6 +50,7 @@ class QuimicaController extends Controller {
                                     'tipo_analisis' => 'required|max:150']);
 
         // Guardar examen
+        $quimica->observaciones = $request->observaciones;
         $quimica->save();
 
         // Guardar analisis.

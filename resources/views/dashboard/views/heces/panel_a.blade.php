@@ -24,7 +24,13 @@
     </div>
 </div>
 <div class="form-group">
-    <label for="entrocitos" class="col-md-5 control-label">Entrocitos</label>
+    <label for="leucositos" class="col-sm-5 control-label">Leucositos</label>
+    <div class="col-sm-6">
+        <input name="leucositos" value="{{$heces->leucositos}}" class="form-control" list="leucositos" />
+    </div>
+</div>
+<div class="form-group">
+    <label for="entrocitos" class="col-md-5 control-label">Eritrocitos</label>
     <div class="col-md-6">
         <input name="entrocitos" value="{{$heces->entrocitos}}" class="form-control" list="entrocitos" />
     </div>

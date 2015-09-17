@@ -46,6 +46,15 @@
 				</tr>
 			</tfooter>
 		</table>
+		<br>
+		<div class="col-md-12 ">
+            <div class="form-group">
+                <label for="observaciones" class="col-md-2 control-label">Observaciones</label>
+                <div class="col-md-9">
+                    <input type="text" name="observaciones" value="{{$quimica->observaciones}}"class="form-control" placeholder=" ">
+                </div>
+            </div>
+        </div>.
 	</div>
 
 	<br>

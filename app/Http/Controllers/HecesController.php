@@ -34,7 +34,7 @@ class HecesController extends Controller {
 
 	public function guardar(Request $request){
 
-		// return $request;
+		// return dd($request);	
 		
 		if ($request->id == "") {
 			$heces = new Heces;
