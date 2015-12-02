@@ -1,25 +1,25 @@
 ﻿<header style="width: 100%;">
 	
-	{{-- <img src="/img/logo.png" alt="" style="width: 35px; float:left; margin-right:10px;"> --}}
-	<div style="height:50px; border-bottom: 1px solid gray; padding-bottom: -5px;">
+	<img src="/img/logo.png" alt="" id="logo" style="width: 55px; float:left; margin-right:10px;">
+	<div id="topheader">
 		
-	<div style="position: absolute; display: inline-block; margin: 0px; font-size: 1em;">
+	<div id="datos">
 		<P>LABORATORIO CLÍNICO CENTRAL DE ILOBASCO</P>
 		<P>INSCRIPCIÓN AL CONSEJO DE SALUD PÚBLICA 1554</P>
 		<P>AV CARLOS BONILLA, CASA #3 BARRIO EL CENTRO, ILOBASCO, CABAÑAS</P>
 		<P>TELEFONO: 2300-6477 , 7435-5563</P>
 	</div>
-	<div style="position: absolute; top:0; right: 50px; font-size: 2.7em; text-align: center; font-weight: 500; font-family: 'Times New Roman';">
+	<div id="titulo">
 		@if($analisis == 'orina' or $analisis == 'heces')
 			General de <br> {{ ucfirst($analisis)}}
-		@elseif($analisis == 'diversos')
+		@elseif($analisis == 'diversos' or $analisis == 'quimica')
 		@else
 			<span style="font-size:1.4em;">{{ ucfirst($analisis)}}</span>
 		@endif		
 	</div>
 	</div>
 
-	<div id="paciente" style="margin: 2px 0;">
+	<div id="paciente">
 		<p style="display: inline; margin-right: 200px;"><strong>NOMBRE: {{strtoupper($paciente->nombre)}}</strong></p>
 		<p style="display: inline; margin-right: 30px;">EDAD: 
 			@if($paciente->edad != 0)

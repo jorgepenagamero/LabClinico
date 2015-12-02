@@ -4,3 +4,16 @@
 </footer>
 
 <button id="p" onClick="window.close();" autofocus>Cerrar</button>
+
+
+<script>
+function cargar(){
+  if (localStorage.getItem("impresora") == "No") {
+    // window.document.getElementById("linkestilo").setAttribute("href", "/css/pdf2.css");
+    var x = window.document.getElementById("estilo2");
+
+    document.head.removeChild(x);
+  }
+};
+
+</script>

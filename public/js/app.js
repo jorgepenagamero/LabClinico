@@ -29,13 +29,30 @@ if (typeof jQuery === "undefined") {
  */
 $.AdminLTE = {};
 
+// set impresora
+$(document).ready(function(){
+  if (localStorage.getItem("impresora") == "Si") {
+    $('#impresora').attr('checked', true);
+    $("#linkestilo").attr("href", "pdf2.css")
+    // console.log('si');
+  }else{
+    $("#linkestilo").attr("href", "pdf.css")
+    // console.log('no');
+    $('#impresora').attr('checked', false);
+  }
+});
+
+function setImpresora(o){
+  if(o.checked){
+    localStorage.setItem("impresora", "Si");
+  }else{
+    localStorage.setItem("impresora", "No");
+  }
+  console.log(localStorage.getItem("impresora"));
+};
+
 $(document).keydown(function(tecla){
-    // console.log(tecla);
-  
-    if (tecla.keyCode == 120) {
-      // console.log('si');
-        $('.imprimir').click();
-    };
+    if (tecla.keyCode == 120) {$('.imprimir').click(); };
 });
 
 
@@ -47,6 +64,7 @@ $(".tags").select2({
   tags: true,
   tokenSeparators: [',']
 });
+
 
 /* --------------------
  * - AdminLTE Options -

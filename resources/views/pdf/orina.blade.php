@@ -2,11 +2,12 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<link href="{{ asset('css/pdf.css') }}" rel="stylesheet">
+	<link type="text/css" href="/css/pdf.css" rel="Stylesheet" id="estilo">
+	<link type="text/css" href="/css/pdf2.css" rel="Stylesheet" id="estilo2">
     <style media="print"> button{display: none;} </style>
 	<title>Examen Orina</title>
 </head>
-<body onload="javascript:print();">
+<body onload="javascript:print(); cargar();">
 		
 	@include('pdf.header')
 
@@ -21,7 +22,7 @@
 				<tr><td style="width:100px;">REACCION</td> <td>: {{$data->reaccion}}<td></tr>
 			</table>
 
-			<h4>SEDIMENTO DE URINARIO</h4>
+			<h4>SEDIMENTO URINARIO</h4>
 			
 			<table>
 				<tr><td style="width:100px;">LEUCOCITOS</td><td>: {{$data->leucocitos}}</td></tr>

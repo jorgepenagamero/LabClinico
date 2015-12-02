@@ -11,12 +11,12 @@
         <input name="consistencia" value="{{$heces->consistencia}}" class="form-control" list="consistencias" />
     </div>
 </div>
-<div class="form-group">
+{{-- <div class="form-group">
     <label for="sangre" class="col-md-5 control-label">Sangre oculta</label>
     <div class="col-md-6">
         <input name="sangre" value="{{$heces->sangre}}" class="form-control" list="sangres" />
     </div>
-</div>
+</div> --}}
 <div class="form-group">
     <label for="restos" class="col-md-5 control-label">Restos macroscopicos</label>
     <div class="col-md-6">

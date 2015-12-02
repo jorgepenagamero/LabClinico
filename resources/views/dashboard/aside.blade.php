@@ -45,9 +45,9 @@
               <span>Expedientes</span></a>
             </i>
             </li>
-            {{-- <li><a href="{{ route('perfil') }}"><i class="fa fa-user-md"></i>
-              <span>Perfil</span></a>
-            </li> --}}
+            <li><a href=""><i class="fa fa-print"></i>
+              <span><input type="checkbox" id="impresora" onClick="setImpresora(this);"></span></a>
+            </li>
             <li><a href="{{ route('info') }}"><i class="fa fa-info"></i>
               <span>Contacto</span></a>
             </li>

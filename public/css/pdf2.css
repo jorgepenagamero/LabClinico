@@ -16,25 +16,24 @@ table td{font-size: 1em; padding: 0px; }
 body {
     margin: 0px 50px 0 20px;
     font-family: Verdana;
-    font-size: 9px;
+    font-size: 12px;
     letter-spacing: .5px;
 }
 
 #logo{
-    display: none;  
+    display: inline;
 }
 
 #datos{
     position: absolute; 
     display: inline-block; 
-    margin: 0px; 
-    font-size: 1em;
+    margin: 0 0 15px 0; 
+    font-size: 1.2em;
 }
 
 #titulo{
     position: absolute; 
-    top:3;
-    line-height: 25px;
+    top:2; 
     right: 50px; 
     font-size: 2.7em; 
     text-align: center; 
@@ -43,21 +42,21 @@ body {
 }
 
 #paciente{
-    margin: 2px 0;
+    margin: 5px 0;
 }
 
 #topheader{
-    height:50px; 
+    height:70px; 
     border-bottom: 1px solid gray; 
     padding-bottom: -5px;
 }
 
-section{padding: 0px 5px 0px 5px; border: 1px solid gray; height: 160px;}
+section{padding: 0px 5px 0px 5px; border: 1px solid gray; height: 200px;}
 .panel{width: 49%; float: left;}
 
 /*quimica*/
 
     .fila{width: 240px; text-align: center; font-size:1.1em; }
-    .line{position: fixed; border-left: 1px solid gray; height: 160px; width: 1px; }
+    .line{position: fixed; border-left: 1px solid gray; height: 200px; width: 1px; }
     .uno{left: 253px; }
     .dos{right: 128px; }

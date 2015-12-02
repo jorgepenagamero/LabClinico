@@ -2,12 +2,14 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<link href="/css/pdf.css" rel="stylesheet">
+	<link type="text/css" href="/css/pdf.css" rel="Stylesheet" id="estilo">
+	<link type="text/css" href="/css/pdf2.css" rel="Stylesheet" id="estilo2">
+
     <style media="print"> button{display: none;} </style>
 
 	<title>Examen Heces</title>
 </head>
-<body onload="javascript:print();">
+<body onload="javascript:print(); cargar();">
 
 	@include('pdf.header')
 

@@ -2,11 +2,12 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<link href="{{ asset('css/pdf.css') }}" rel="stylesheet">
+	<link type="text/css" href="/css/pdf.css" rel="Stylesheet" id="estilo">
+	<link type="text/css" href="/css/pdf2.css" rel="Stylesheet" id="estilo2">
     <style media="print"> button{display: none;} </style>
 	<title>Examen Hemograma</title>
 </head>
-<body onload="javascript:print();">
+<body onload="javascript:print(); cargar();">
 
 	@include('pdf.header')
 
@@ -29,7 +30,7 @@
 				<tr><td style="width:180px;">EOSINOFILOS %</td> <td>: {{$data->eosinofilos}}</td></tr>
 				<tr><td style="width:180px;">MONOCITOS %</td> <td>: {{$data->monocitos}}</td></tr>
 				<tr><td style="width:180px;">BASOFILOS %</td> <td>: {{$data->basofitos}}</td></tr>
-				<tr><td style="width:180px;">PLAQUETAS X mmS</td> <td>: {{$data->plaquetas}}</td></tr>
+				<tr><td style="width:180px;">PLAQUETAS X mm3</td> <td>: {{$data->plaquetas}}</td></tr>
 			</table>
 		</div>
 		<table>

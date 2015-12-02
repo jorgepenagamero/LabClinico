@@ -74,7 +74,7 @@
       document.getElementById('resultado').value = 'Linea Roja: \n \n Linea Blanca: \n \n Linea Plaquetaria: \n';
   }
   function depuracion(){
-      document.getElementById('resultado').value = 'Concentración de Creatimina: \n Depuración de Creatimina: \n Volumen de Orina: \n Creatimina en Sangre: \n';
+      document.getElementById('resultado').value = 'Concentración de Creatimina: \n Depuración de Creatinina: \n Volumen de Orina: \n Creatimina en Sangre: \n';
   }
   function glicosilada(){
       document.getElementById('resultado').value = 'Paciente no diabetico: 4.2 - 6.2 % \n Buen Control: 5.5 - 6.8 % \n Control Regular: 6.8 - 7.6 % \n Control pobre mayor de 7.8 % \n';
